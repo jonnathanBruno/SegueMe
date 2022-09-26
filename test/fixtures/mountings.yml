@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  follower: one
+  team: one
+  ano: 2022-09-26
+  funcao: MyString
+
+two:
+  follower: two
+  team: two
+  ano: 2022-09-26
+  funcao: MyString
