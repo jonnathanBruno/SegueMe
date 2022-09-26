@@ -1,0 +1,37 @@
+<%= form_with(model: follower) do |form| %>
+  <% if follower.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(follower.errors.count, "error") %> prohibited this follower from being saved:</h2>
+
+      <ul>
+        <% follower.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :idade %>
+    <%= form.number_field :idade %>
+  </div>
+
+  <div class="field">
+    <%= form.label :team_id %>
+    <%= form.text_field :team_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :parish_id %>
+    <%= form.text_field :parish_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
