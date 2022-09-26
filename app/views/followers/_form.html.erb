@@ -1,32 +1,44 @@
-<%= form_with(model: follower) do |form| %>
-  <% if follower.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(follower.errors.count, "error") %> prohibited this follower from being saved:</h2>
+<p id="notice"><%= notice %></p>
 
-      <ul>
-        <% follower.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+    <div class="container-fluid">
+      <h1 class="h3 mb-2 text-gray-800">Cadastrar Seguidores</h1>
+        <div class="card shadow mb-4">
+          <div class="card-body">
+              <%= form_with(model: follower, html: {class: "row g-3"}) do |form| %>
+                  <div class="col-md-6">
+                    <label for="inputCity" class="form-label">Nome Completo</label>
+                    <%= form.text_field :nome , class: "form-control"%>
+                  </div>
+                  <div class="col-md-2">
+                    <label for="inputZip" class="form-label">Idade</label>
+                     <%= form.number_field :idade, class: "form-control" %>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="inputState" class="form-label">Paróquia</label>
+                    <%= form.number_field :parish_id, class: "form-control" %>
+                  </div>
+                  <div class="col-12">
+                    <%= form.submit "Cadastrar Seguidor", class:"btn btn-primary" %>
+                  </div>
+              <% end %>
+          </div>
+        </div>
+      </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :nome %>
-    <%= form.text_field :nome %>
-  </div>
+    <!-- Footer -->
+    <%= render "layouts/footer"%>
+    <!-- End of Footer -->
+</div>
+<!-- End of Content Wrapper -->
 
-  <div class="field">
-    <%= form.label :idade %>
-    <%= form.number_field :idade %>
-  </div>
+</div>
+<!-- End of Page Wrapper -->
 
-  <div class="field">
-    <%= form.label :parish_id %>
-    <%= form.text_field :parish_id %>
-  </div>
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+
+             

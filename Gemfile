@@ -52,3 +52,4 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data'
 gem 'net-smtp'
+gem "font-awesome-sass", "~> 6.2.0"
