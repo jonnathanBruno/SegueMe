@@ -65,6 +65,6 @@ class FollowersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def follower_params
-      params.require(:follower).permit(:nome, :idade, :team_id, :parish_id)
+      params.require(:follower).permit(:nome, :idade, :parish_id)
     end
 end
