@@ -4,7 +4,7 @@
         <!-- logo -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center mt-5 mb-5" href="index.html">
             <div class="sidebar-brand-icon">
-                <img src="tema/img/logo.png" width="150px">
+                <%= image_tag "logo.png", class: "logo" %>
             </div>
         </a>
 
@@ -113,8 +113,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="mr-2 d-none d-lg-inline text-gray-600 small">Jonnathan Bruno</span>
-                        <img class="img-profile rounded-circle"
-                            src="tema/img/perfil.png">
+                         <%= image_tag "perfil.png", class: "img-profile rounded-circle" %>
                     </a>
                     <!-- Dropdown - User Information -->
                     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
