@@ -1,57 +1,49 @@
 <div class="container-fluid">
-  <h1 class="h3 mb-2 text-gray-800"><%=@textoPagina%></h1>
+  <h1 class="h3 mb-2 text-gray-800"><%= @textoPagina %></h1>
     <div class="card shadow mb-4">
       <div class="card-body">
-          <%= form_with(model: [follower], html: {class: "row g-3"}) do |form| %>
-              <div class="col-md-6">
-                <label for="inputCity" class="form-label">Nome Completo</label>
-                <%= form.text_field :nome , class: "form-control"%>
-              </div>
-              <div class="col-md-2">
-                <label for="inputZip" class="form-label">Idade</label>
-                  <%= form.number_field :idade, class: "form-control" %>
-              </div>
-              <div class="col-md-4">
-                <label for="inputState" class="form-label">Paróquia</label>
-                <%= form.number_field :parish_id, class: "form-control" %>
-              </div>
 
-              <div class="col-md-6">
-                <label for="inputCity" class="form-label">Endereço</label>
-                <%= form.text_field :endereco , class: "form-control"%>
-              </div>
+        <%= simple_form_for follower do |f| %>
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.input :nome, label: "Nome do Seguidor", class: "form-control" %>
+            </div>
 
-              <%= form.fields_for :contact do |c| %>
-                <div class="col-md-2">
-                  <label for="inputState" class="form-label">Contato</label>
-                  <%= c.text_field :contato_1 , class: "form-control" %>
-                </div>
-              <% end %>
+            <div class="col-md-2">
+              <%= f.input :idade, label: "Idade", class: "form-control" %>
+            </div>
 
-              <div class="col-md-4">
-                <label for="inputState" class="form-label">Email</label>
-                <%= form.text_field :email, class: "form-control" %>
-              </div>
+            <div class="col-md-4">
+              <%= f.input :parish_id, label: "Paróquia" , class: "form-control"%>
+            </div>
+          </div>
 
-              <div class="col-12">
-                <%= form.submit @textoPagina, class:"btn btn-primary" %>
-              </div>
+        <div class="row">
+          <div class="col-md-6">
+            <%= f.input :endereco, label: "Endereço" %>
+          </div>
+
+          <%= f.fields_for :contact do |c| %>
+            <div class="col-md-2">
+              <%= c.input :contato_1, label: "Contato" %>
+            </div>
           <% end %>
+
+          <div class="col-md-4">
+            <%= f.input :email, label: "Email" %>
+          </div>  
+        </div>
+
+          <%= f.button :submit, @textoPagina, class: "btn btn-primary"%>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
 
-    <!-- Footer -->
-    <%= render "layouts/footer"%>
-    <!-- End of Footer -->
+<%= render "layouts/footer"%>
 </div>
-<!-- End of Content Wrapper -->
-
 </div>
-<!-- End of Page Wrapper -->
-
-<!-- Scroll to Top Button-->
 <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
 </a>
