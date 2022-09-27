@@ -24,7 +24,6 @@ class FollowersController < ApplicationController
   # POST /followers or /followers.json
   def create
     @follower = Follower.new(follower_params)
-
     respond_to do |format|
       if @follower.save
         format.html { redirect_to follower_url(@follower), notice: "Seguidor criado com sucesso." }
@@ -67,6 +66,6 @@ class FollowersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def follower_params
-      params.require(:follower).permit(:nome, :idade, :parish_id)
+      params.require(:follower).permit(:nome, :idade, :parish_id, :email, :endereco, :contato)
     end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_26_151229) do
+ActiveRecord::Schema.define(version: 2022_09_27_133519) do
 
   create_table "contacts", force: :cascade do |t|
     t.string "contato_1"
@@ -27,6 +27,9 @@ ActiveRecord::Schema.define(version: 2022_09_26_151229) do
     t.integer "parish_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "email"
+    t.text "endereco"
+    t.string "contato"
     t.index ["parish_id"], name: "index_followers_on_parish_id"
   end
 
