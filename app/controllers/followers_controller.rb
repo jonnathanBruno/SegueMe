@@ -13,10 +13,12 @@ class FollowersController < ApplicationController
   # GET /followers/new
   def new
     @follower = Follower.new
+    @textoPagina = "Cadastrar Seguidor"
   end
 
   # GET /followers/1/edit
   def edit
+    @textoPagina = "Editar Seguidor"
   end
 
   # POST /followers or /followers.json
@@ -38,7 +40,7 @@ class FollowersController < ApplicationController
   def update
     respond_to do |format|
       if @follower.update(follower_params)
-        format.html { redirect_to follower_url(@follower), notice: "Follower was successfully updated." }
+        format.html { redirect_to follower_url(@follower), notice: "Seguidor atualizado com sucesso." }
         format.json { render :show, status: :ok, location: @follower }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +54,7 @@ class FollowersController < ApplicationController
     @follower.destroy
 
     respond_to do |format|
-      format.html { redirect_to followers_url, notice: "Follower was successfully destroyed." }
+      format.html { redirect_to followers_url, notice: "Seguidor excluído com sucesso." }
       format.json { head :no_content }
     end
   end

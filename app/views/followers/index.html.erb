@@ -1,45 +1,55 @@
-<p id="notice"><%= notice %></p>
-    <div class="container-fluid">
-        <h1 class="h3 mb-2 text-gray-800">Seguidores</h1>
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Seguidores Cadastrados</h6>
-            </div>
+<div class="container-fluid">
+    <h1 class="h3 mb-2 text-gray-800">Seguidores</h1>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Seguidores Cadastrados</h6>
+        </div>
 
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                        <thead>
-                            <tr>
-                            <th>Nome</th>
-                            <th>Idade</th>
-                            <th>Paróquia</th>
-                            <th colspan="3"></th>
-                            </tr>
-                        </thead>
-                        <tfoot>
-                        <tbody>
-                            <% @followers.each do |follower| %>
-                            <tr>
-                                <td><%= follower.nome %></td>
-                                <td><%= follower.idade %></td>
-                                <td><%= follower.parish_id %></td>
-                                <td><%= link_to 'Show', follower %></td>
-                                <td><%= link_to 'Edit', edit_follower_path(follower) %></td>
-                                <td><%= link_to 'Destroy', follower, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                            </tr>
-                            <% end %>
-                        </tbody>
-                    </table>
-                </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                        <th class="col-5">Nome do Seguidor</th>
+                        <th class="col-2">Idade</th>
+                        <th class="col-3">Paróquia</th>
+                        <th colspan="1"></th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                    <tbody>
+                        <% @followers.each do |follower| %>
+                        <tr>
+                            <td class="show"><%= follower.nome %></td>
+                            <td class="show"><%= follower.idade %> anos </td>
+                            <td class="show"><%= follower.parish_id %></td>
+                            <td>
+                                <%= link_to follower,  class:"btn btn-success", style: "margin-bottom: 2px;" do %>
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                <% end %>
+
+                                <%= link_to edit_follower_path(follower),  class:"btn btn-primary", style: "margin-bottom: 2px;" do %>
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                <% end %>
+
+                                <%= link_to follower, method: :delete, data: { confirm: 'Você tem certeza?' }, class:"btn btn-danger", style: "margin-bottom: 2px;" do %>
+                                    <i class="fa-regular fa-trash-can"></i>
+                                <% end %>
+                            </td>
+                        </tr>
+                        <% end %>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
+    
+</div>
 </div>
 
-    <!-- Footer -->
-    <%= render "layouts/footer"%>
-    <!-- End of Footer -->
+<!-- Footer -->
+<%= render "layouts/footer"%>
+<!-- End of Footer -->
 </div>
 <!-- End of Content Wrapper -->
 
@@ -52,4 +62,4 @@
 </a>
 
 
-             
+            

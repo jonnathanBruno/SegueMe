@@ -1,19 +1,39 @@
-<p id="notice"><%= notice %></p>
+  <div class="container-fluid">
+  <h1 class="h3 mb-2 text-gray-800">Detalhes Seguidor</h1>
+    <div class="card shadow mb-4">
+      <div class="card-body">
+        <div class="card-header">
+            <h3 class="well"><%= @follower.nome %></h3>
+        </div>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @follower.nome %>
-</p>
+        <div class="container mt-4">
+          <div class="form-horizontal">
 
-<p>
-  <strong>Idade:</strong>
-  <%= @follower.idade %>
-</p>
+            <div class="control-group">
+              <label class="control-label show"><strong>Idade: </strong> <%= @follower.idade %> anos</label>
+            </div>
 
-<p>
-  <strong>Parish:</strong>
-  <%= @follower.parish_id %>
-</p>
+            <div class="control-group">
+              <label class="control-label show"><strong>Paróquia: </strong><%= @follower.parish_id %></label>
+            </div>
 
-<%= link_to 'Edit', edit_follower_path(@follower) %> |
-<%= link_to 'Back', followers_path %>
+            <div class="control-group">
+                <label class="control-label show"><strong>Telefone: </strong></label>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label show"><strong>Equipe: </strong></label>
+            </div>
+
+             <div class="control-group mt-4">
+                <%= link_to 'Editar', edit_follower_path(@follower), class:"btn btn-primary" %>
+                <%= link_to 'Voltar', followers_path, class:"btn btn-secondary" %>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
