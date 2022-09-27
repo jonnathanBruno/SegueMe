@@ -14,7 +14,7 @@
             </div>
 
             <div class="col-md-4">
-              <%= f.input :parish_id, label: "Paróquia" , class: "form-control"%>
+              <%= f.association :parish, label_method: :nome_paroquia, include_blank: false, value_method: :id, label: "Paróquia" , class: "form-control"%>
             </div>
           </div>
 

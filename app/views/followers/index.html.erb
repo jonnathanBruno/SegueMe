@@ -12,7 +12,7 @@
                         <tr>
                         <th class="col-5">Nome do Seguidor</th>
                         <th class="col-2">Idade</th>
-                        <th class="col-3">Paróquia</th>
+                        <th class="col-3">Contato</th>
                         <th colspan="1"></th>
                         </tr>
                     </thead>
@@ -22,7 +22,7 @@
                         <tr>
                             <td class="show"><%= follower.nome %></td>
                             <td class="show"><%= follower.idade %> anos </td>
-                            <td class="show"><%= follower.parish_id %></td>
+                            <td class="show"><%= follower.contact.contato_1 %></td>
                             <td>
                                 <%= link_to follower,  class:"btn btn-success", style: "margin-bottom: 2px;" do %>
                                     <i class="fa-solid fa-magnifying-glass"></i>
