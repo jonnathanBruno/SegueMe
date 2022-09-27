@@ -20,10 +20,14 @@
                 <label for="inputCity" class="form-label">Endereço</label>
                 <%= form.text_field :endereco , class: "form-control"%>
               </div>
-              <div class="col-md-2">
-                <label for="inputZip" class="form-label">Contato</label>
-                  <%= form.text_field :contato, class: "form-control" %>
-              </div>
+
+              <%= form.fields_for :contact do |c| %>
+                <div class="col-md-2">
+                  <label for="inputState" class="form-label">Contato</label>
+                  <%= c.text_field :contato_1 , class: "form-control" %>
+                </div>
+              <% end %>
+
               <div class="col-md-4">
                 <label for="inputState" class="form-label">Email</label>
                 <%= form.text_field :email, class: "form-control" %>

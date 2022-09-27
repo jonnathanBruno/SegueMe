@@ -13,6 +13,7 @@ class FollowersController < ApplicationController
   # GET /followers/new
   def new
     @follower = Follower.new
+    @follower.build_contact()
     @textoPagina = "Cadastrar Seguidor"
   end
 
@@ -66,6 +67,6 @@ class FollowersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def follower_params
-      params.require(:follower).permit(:nome, :idade, :parish_id, :email, :endereco, :contato)
+      params.require(:follower).permit(:nome, :idade, :parish_id, :email, :endereco, :contact_attributes => [:contato_1])
     end
 end
