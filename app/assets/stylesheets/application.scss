@@ -26,6 +26,9 @@ h1,h2,h3,h4,h5{
     max-width:100px;
 }
 
+.teste{
+    display:flex !important;
+}
 
 @media (min-width: 768px){
     .logo{
@@ -35,5 +38,11 @@ h1,h2,h3,h4,h5{
     .margin-logo{
         margin-top: 50px;
         margin-bottom: 55px;
+    }
+}
+
+@media (min-width: 500px){
+    .teste{
+        display: none !important;
     }
 }

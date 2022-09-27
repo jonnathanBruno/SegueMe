@@ -1,15 +1,18 @@
+<!-- Page Wrapper -->
 <div id="wrapper">
+
+    <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-        
-        <!-- logo -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center margin-logo" href="index.html">
+
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center margin-logo" href="/followers">
             <div class="sidebar-brand-icon">
-                <%= image_tag "logo.png", class: "logo" %>
+                 <%= image_tag "logo.png", class: "logo" %>
             </div>
         </a>
 
         <!-- Divider -->
-        <hr class="sidebar-divider">
+        <hr class="sidebar-divider mt-2">
 
         <!-- Heading -->
         <div class="sidebar-heading">
@@ -35,7 +38,7 @@
         <!-- Divider -->
         <hr class="sidebar-divider">
 
-        <!-- Heading -->
+       <!-- Heading -->
         <div class="sidebar-heading">
              Equipe
         </div>
@@ -56,10 +59,10 @@
             </a>
         </li>
 
-         <!-- Divider -->
+        <!-- Divider -->
         <hr class="sidebar-divider">
 
-        <!-- Heading -->
+          <!-- Heading -->
         <div class="sidebar-heading">
             Montagem
         </div>
@@ -79,23 +82,31 @@
                 </div>
             </div>
         </li>
+
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle">
+                <i class="fa-solid fa-bars" style="color:white"></i>
+            </button>
+        </div>
     </ul>
-<!-- End of Sidebar -->
+    <!-- End of Sidebar -->
 
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
 
-<!-- Content Wrapper -->
-<div id="content-wrapper" class="d-flex flex-column">
-    <div id="content">
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+        <!-- Main Content -->
+        <div id="content">
 
-            <!-- Sidebar Toggle (Topbar) -->
-            <form class="form-inline">
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                <!-- Sidebar Toggle (Topbar) -->
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                    <i class="fa fa-bars"></i>
+                    <i class="fa-solid fa-bars" style="color:#2a51c4"></i>
                 </button>
-            </form>
 
-            <!-- Topbar Navbar -->
+                <!-- Topbar Navbar -->
             <ul class="navbar-nav ml-auto">
 
                 <div class="topbar-divider d-none d-sm-block"></div>
@@ -125,7 +136,5 @@
                         </a>
                     </div>
                 </li>
-
             </ul>
         </nav>
-<!-- End of Topbar -->
