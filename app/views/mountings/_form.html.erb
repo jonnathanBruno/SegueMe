@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <h1 class="h3 mb-2 text-gray-800">Montar Equipe</h1>
+    <div class="card shadow mb-4">
+      <div class="card-body">
+        <%= simple_form_for @mounting do |f| %>
+            <div class="row">
+                <div class="col-md-12">
+                    <%= f.association :team, label_method: :nome_equipe, include_blank: false, value_method: :id, label: "Equipe"%>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <%= f.input :funcao, as: :select, collection: ["Equipista", "Coordenador", "Casal Apoio", "Casal"], label: "Função na Equipe", selected: "Equipista" %>
+                </div>
+                <div class="col-md-4">
+                    <%= f.input :ano, label: "Ano do Encontro", order: [:year] %>
+                </div>
+            </div>
+             <div class="row">
+                <div class="col-md-12">
+                  <%= f.input :follower_id, as: :select, :collection => @followers,
+                      :label_method => :nome, :value_method => :id, :label => "Escolher Seguidor" , :include_blank => false %>
+                </div>
+            </div>
+            <%= f.button :submit, "Inserir na Equipe", class: "btn btn-primary"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "layouts/footer"%>
+</div>
+</div>
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>

@@ -1,0 +1,72 @@
+<div class="container-fluid">
+    <h1 class="h3 mb-2 text-gray-800">Montar Equipes</h1>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3"></div>
+
+        <div class="card-body">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <% @teams.each do |team| %>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#<%= team.nome_equipe.delete(' ') %>" aria-expanded="false" aria-controls="flush-collapseOne">
+                            <span class="show"><%= team.nome_equipe %></span>
+                        </button>
+                        </h2>
+                        <div id="<%= team.nome_equipe.delete(' ') %>" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                               <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                            <th class="col-5">Nome Seguidor</th>
+                                            <th class="col-2">Função</th>
+                                            <th class="col-2">Contato</th>
+                                            <th class="col-2">Ano</th>
+                                            <th colspan="1"></th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                        <tbody>
+                                            <% @mountings = Mounting.where(team_id: team.id) %>
+                                            <% @mountings.each do |mounting| %>
+                                            <tr>
+                                                <td class="show"><%= mounting.follower.nome %></td>
+                                                <td class="show"><%= mounting.funcao %></td>
+                                                <td class="show"><%= mounting.follower.contact.contato_1 %></td>
+                                                <td class="show"><%= mounting.ano %></td>
+                                                <td>
+                                                    <%= link_to mounting, method: :delete, data: { confirm: 'Você tem certeza?' }, class:"btn btn-danger", style: "margin-bottom: 2px;" do %>
+                                                        <i class="fa-regular fa-trash-can"></i>
+                                                    <% end %>
+                                                </td>
+                                            </tr>
+                                            <% end %>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <a href="/mounting/team/new" class="btn btn-success mb-4">Inserir Equipista</a>
+    
+</div>
+</div>
+
+<!-- Footer -->
+<%= render "layouts/footer"%>
+<!-- End of Footer -->
+</div>
+<!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+            
