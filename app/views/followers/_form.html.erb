@@ -35,8 +35,11 @@
         </div>
 
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-6 py-2">
             <%= f.input :tipo_encontrista, as: :select, collection: ["Seguidor", "Seguimista"], label: "Seguidor ou Seguimista?", selected: "Seguidor" %>
+          </div>
+          <div class="col-md-2 py-5">
+            <div class="hm">?<div>Seguidor é quem trabalha no encontro, Seguimista é quem participa.</div></div>
           </div>
         </div>  
 
@@ -51,7 +54,7 @@
 </div>
 </div>
 <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
+    <i class="fa-solid fa-circle-arrow-up"></i>
 </a>
 
 

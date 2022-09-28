@@ -4,6 +4,28 @@
     src: url("//db.onlinewebfonts.com/t/e7f249e71a563eed9c495835657eb9c2.eot");
 }
 
+.hm div {display:none;position:relative}
+.hm:hover div {display:block;position:absolute;top:0;margin-left:40px}
+
+/* daqui pra baixo é só estética para demonstração */
+.hm {
+  width:1.5em;height:1.5em;
+  text-align:center;
+  font:15px/1.5em "segoe ui",arial,helvetica,sans-serif;
+  border:1px solid #999;
+  border-radius:50%;
+  color:#999;
+
+}
+
+.hm div {
+  width:8em;
+  color:#fff;
+  background:#999;
+  border-radius:5px;
+  padding:5px;
+}
+
 h1,h2,h3,h4,h5{
     font-family: 'Poetsen One', sans-serif;
 }
