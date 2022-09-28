@@ -1,5 +1,5 @@
   <div class="container-fluid">
-  <h1 class="h3 mb-2 text-gray-800">Detalhes Seguidor</h1>
+  <h1 class="h3 mb-2 text-gray-800">Detalhes Encontrista</h1>
     <div class="card shadow mb-4">
       <div class="card-body">
         <div class="card-header">
@@ -8,6 +8,10 @@
 
         <div class="container mt-4">
           <div class="form-horizontal">
+
+            <div class="control-group">
+              <label class="control-label show"><strong>Encontrista: </strong> <%= @follower.tipo_encontrista %></label>
+            </div>
 
             <div class="control-group">
               <label class="control-label show"><strong>Idade: </strong> <%= @follower.idade %> anos</label>
@@ -31,7 +35,7 @@
 
              <div class="control-group mt-4">
                 <%= link_to 'Editar', edit_follower_path(@follower), class:"btn btn-primary" %>
-                <%= link_to 'Voltar', followers_path, class:"btn btn-secondary" %>
+                <%= link_to 'Voltar', "/followers/list/#{@follower.tipo_encontrista}", class:"btn btn-secondary" %>
             </div>
 
           </div>

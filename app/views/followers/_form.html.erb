@@ -34,7 +34,13 @@
           </div>  
         </div>
 
-          <%= f.button :submit, @textoPagina, class: "btn btn-primary"%>
+        <div class="row">
+          <div class="col-md-6">
+            <%= f.input :tipo_encontrista, as: :select, collection: ["Seguidor", "Seguimista"], label: "Seguidor ou Seguimista?", selected: "Seguidor" %>
+          </div>
+        </div>  
+
+          <%= f.button :submit, @textoPagina, class: "btn btn-primary mt-3"%>
         <% end %>
       </div>
     </div>

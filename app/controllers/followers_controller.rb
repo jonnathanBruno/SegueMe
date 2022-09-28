@@ -3,7 +3,7 @@ class FollowersController < ApplicationController
 
   # GET /followers or /followers.json
   def index
-    @followers = Follower.all
+      @followers = Follower.buscar_tipo_encontrista(params[:tipo_encontrista])    
   end
 
   # GET /followers/1 or /followers/1.json
@@ -14,12 +14,12 @@ class FollowersController < ApplicationController
   def new
     @follower = Follower.new
     @follower.build_contact()
-    @textoPagina = "Cadastrar Seguidor"
+    @textoPagina = "Cadastrar Encontrista"
   end
 
   # GET /followers/1/edit
   def edit
-    @textoPagina = "Editar Seguidor"
+    @textoPagina = "Editar Encontrista"
   end
 
   # POST /followers or /followers.json
@@ -27,7 +27,7 @@ class FollowersController < ApplicationController
     @follower = Follower.new(follower_params)
     respond_to do |format|
       if @follower.save
-        format.html { redirect_to follower_url(@follower), notice: "Seguidor criado com sucesso." }
+        format.html { redirect_to follower_url(@follower), notice: "Encontrista criado com sucesso." }
         format.json { render :show, status: :created, location: @follower }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +40,7 @@ class FollowersController < ApplicationController
   def update
     respond_to do |format|
       if @follower.update(follower_params)
-        format.html { redirect_to follower_url(@follower), notice: "Seguidor atualizado com sucesso." }
+        format.html { redirect_to follower_url(@follower), notice: "Encontrista atualizado com sucesso." }
         format.json { render :show, status: :ok, location: @follower }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,7 +54,7 @@ class FollowersController < ApplicationController
     @follower.destroy
 
     respond_to do |format|
-      format.html { redirect_to followers_url, notice: "Seguidor excluído com sucesso." }
+      format.html { redirect_to followers_url, notice: "Encontrista excluído com sucesso." }
       format.json { head :no_content }
     end
   end
@@ -67,6 +67,6 @@ class FollowersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def follower_params
-      params.require(:follower).permit(:nome, :idade, :parish_id, :email, :endereco, :contact_attributes => [:contato_1])
+      params.require(:follower).permit(:nome, :idade, :parish_id, :email, :tipo_encontrista, :endereco, :contact_attributes => [:contato_1])
     end
 end
