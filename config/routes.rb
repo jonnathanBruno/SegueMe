@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root "followers#index"
+
+  get :search, controller: :application
   
   resources :followers, except: [:index]
   resources :teams, only: [:index, :create, :new, :destroy]
