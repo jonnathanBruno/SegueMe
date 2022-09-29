@@ -27,7 +27,7 @@ class FollowersController < ApplicationController
     @follower = Follower.new(follower_params)
     respond_to do |format|
       if @follower.save
-        format.html { redirect_to follower_url(@follower), notice: "Encontrista criado com sucesso." }
+        format.html { redirect_to "/followers/new", notice: "Encontrista criado com sucesso." }
         format.json { render :show, status: :created, location: @follower }
       else
         format.html { render :new, status: :unprocessable_entity }
