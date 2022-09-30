@@ -1,32 +1,65 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>SegueMe</title>
-    <meta charset="UTF-8" content="width=device-width,initial-scale=1">
-  </head>
+    <head>
+        <title>SegueMe</title>
+        <meta charset="UTF-8">
+        <%= wicked_pdf_stylesheet_link_tag "pdf" %>
+    </head>
 
-  <body>
-    <table>
-    <thead>
-        <tr>
-        <th>Nome do Seguidor</th>
-        <th>Função</th>
-        <th>Contato</th>
-        </tr>
-    </thead>
+    <body>
+        <% @circles.each do |circle| %>
+          <h1 class="h3 mb-2 text-gray-800"><%= circle.color %></h1>
+            <div class="card shadow mb-4">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th class="show" scope="col-6">Nome Seguidor</th>
+                            <th class="show" scope="col-2">Função</th>
+                            <th class="show" scope="col-2">Contato</th>
+                            <th class="show" scope="col-2">Ano</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @mountings = Mounting.where(circle_id: circle.id) %>
+                        <% @mountings.each do |mc| %>
+                            <tr>
+                                <td class="show"><%= mc.follower.name%></td>
+                                <td class="show"><%= mc.occupation %></td>
+                                <td class="show"><%= mc.follower.contact.contact %></td>
+                                <td class="show"><%= mc.year %></td>
+                            </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+        <%end%>
 
-    <tfoot>
-        <tbody>
-            <% @mountings.each do |mt| %>
-                <tr>
-                    <td class="show"><%= mt.follower.name %></td>
-                    <td class="show"><%= mt.occupation %></td>
-                    <td class="show"><%= mt.follower.contact.contact %></td>
-                    <td class="show"><%= mt.year %></td>
-                </tr>
-            <% end %>
-        </tbody>    
-    </tfoot>
-<table>    
-</body>
+
+        <% @teams.each do |team| %>
+            <h1 class="h3 mb-2 text-gray-800"><%= team.name %></h1>
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th class="show" scope="col-6">Nome Seguidor</th>
+                        <th class="show" scope="col-2">Função</th>
+                        <th class="show" scope="col-2">Contato</th>
+                        <th class="show" scope="col-2">Ano</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @mountings = Mounting.where(team_id: team.id) %>
+                    <% @mountings.each do |mc| %>
+                        <tr>
+                            <td class="show"><%= mc.follower.name%></td>
+                            <td class="show"><%= mc.occupation %></td>
+                            <td class="show"><%= mc.follower.contact.contact %></td>
+                            <td class="show"><%= mc.year %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+            <br>
+        <%end%>  
+    </body>
 </html>

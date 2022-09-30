@@ -1,12 +1,25 @@
 p "iniciando...."
 
 Parish.create!(
-    name: "Paróquia de Teste 1"
+    name: "Paróquia de Sant'Ana e São Joaquim"
 )
 
 Parish.create!(
-    name: "Paróquia de Teste 2"
+    name: "Paróquia de Mirassol"
 )
+
+Circle.create!(
+    color: "Paróquia de Sant'Ana e São Joaquim"
+)
+
+Parish.create!(
+    color: "Paróquia de Mirassol"
+)
+
+
+
+
+
 
 
 

@@ -1,6 +1,8 @@
 class MountingsController < ApplicationController
     def index
         @mountings = Mounting.all
+        @circles = Circle.all
+        @teams = Team.all
         respond_to do |format|
             format.html
             format.json
