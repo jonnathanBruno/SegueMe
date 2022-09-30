@@ -21,7 +21,7 @@ class MountingsController < ApplicationController
             format.html { redirect_to new_mounting_url, notice: "Encontrista adicionado com sucesso." }
             format.json { render :new, status: :created, location: @mounting }
           else
-            format.html { render :new, status: :unprocessable_entity }
+            format.html { render :new, status: :unprocessable_entity,alert: "Deu treta"  }
             format.json { render json: @mounting.errors, status: :unprocessable_entity }
           end
         end
@@ -43,6 +43,6 @@ class MountingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def mounting_params
-      params.require(:mounting).permit(:follower_id, :team_id, :ano, :funcao)
+      params.require(:mounting).permit(:follower_id, :team_id, :circle_id, :ano, :funcao)
     end
 end

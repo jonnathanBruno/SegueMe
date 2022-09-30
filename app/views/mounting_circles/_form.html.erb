@@ -1,28 +1,29 @@
 <div class="container-fluid">
-  <h1 class="h3 mb-2 text-gray-800">Montar Equipe</h1>
+  <h1 class="h3 mb-2 text-gray-800">Montar Círculo</h1>
     <div class="card shadow mb-4">
       <div class="card-body">
-        <%= simple_form_for @mounting do |f| %>
+        <%= simple_form_for @teste do |f| %>
             <div class="row">
+
                 <div class="col-md-12">
                     <%= f.association :team, label_method: :nome_equipe, include_blank: false, value_method: :id, label: "Equipe"%>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-8">
-                    <%= f.input :funcao, as: :select, collection: ["Equipista", "Coordenador", "Casal Apoio", "Casal"], label: "Função na Equipe", selected: "Equipista" %>
+                    <%= f.input :funcao, as: :select, collection: ["Seguimista", "Coordenador", "Casal Apoio"], label: "Função no Círculo", selected: "Seguimista" %>
                 </div>
                 <div class="col-md-4">
                     <%= f.input :ano, label: "Ano do Encontro", order: [:year] %>
                 </div>
-            </div>
-             <div class="row">
-               <div class="col-md-4">
+                <div class="col-md-4">
                     <%= f.input :follower_id %>
                 </div>
-                <div class="col-md-4">
+                 <div class="col-md-4">
                     <%= f.input :circle_id %>
                 </div>
+            </div>
+             <div class="row">
             </div>
             <%= f.button :submit, "Inserir na Equipe", class: "btn btn-primary"%>
             <%= link_to 'Voltar', "/mounting/team", class:"btn btn-secondary" %>

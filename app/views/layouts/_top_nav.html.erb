@@ -19,29 +19,21 @@
             Seguidor  
         </div>
 
-        <!-- Nav Item -->
+        <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link" href="/followers/new">
-                <i class="fa-solid fa-user-plus"></i>
-                <span>Cadastrar Encontrista</span>
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEncontrista"
+                aria-expanded="true" aria-controls="collapseEncontrista">
+                <i class="fa-solid fa-users"></i>
+                <span>Seguidor/Seguimista</span>
             </a>
-        </li>
-
-
-        <!-- Nav Item -->
-        <li class="nav-item">
-            <a class="nav-link" href="/followers/list/Seguidor">
-                <i class="fa-solid fa-user-group"></i>
-                <span>Listar Seguidores</span>
-            </a>
-        </li>
-
-        <!-- Nav Item -->
-        <li class="nav-item active">
-            <a class="nav-link" href="/followers/list/Seguimista">
-                <i class="fa-solid fa-users"></i>              
-                <span>Listar Seguimistas</span>
-            </a>
+            <div id="collapseEncontrista" class="collapse" aria-labelledby="headingEncontrista"
+                data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="/followers/new">Cadastrar Encontrista</a>
+                    <a class="collapse-item" href="/followers/list/Seguidor">Listar Seguidor</a>
+                    <a class="collapse-item" href="/followers/list/Seguimista">Listar Seguimista</a>
+                </div>
+            </div>
         </li>
 
         <!-- Divider -->
@@ -51,21 +43,22 @@
         <div class="sidebar-heading">
              Equipe
         </div>
-
-        <!-- Nav Item -->
+        <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link" href="/teams/new">
-                <i class="fa-solid fa-shuttle-space"></i>
-                <span>Cadastrar Equipe</span>
-            </a>
-        </li>
-
-        <!-- Nav Item -->
-        <li class="nav-item active">
-            <a class="nav-link" href="/teams">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseParticipacao"
+                aria-expanded="true" aria-controls="collapseParticipacao">
                 <i class="fa-sharp fa-solid fa-people-group"></i>
-                <span>Listar Equipe</span>
+                <span>Equipe/Círculo</span>
             </a>
+            <div id="collapseParticipacao" class="collapse" aria-labelledby="headingParticipacao"
+                data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="/teams/new">Cadastrar Equipe</a>
+                      <a class="collapse-item" href="/circles/new">Cadastrar Círculo</a>
+                    <a class="collapse-item" href="/teams">Listar Equipe</a>
+                    <a class="collapse-item" href="/circles">Listar Círculo</a>
+                </div>
+            </div>
         </li>
 
         <!-- Divider -->
@@ -86,7 +79,8 @@
             <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                 data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="/mounting/team">Montar Equipes</a>
+                    <a class="collapse-item" href="/mounting/team">Montar Equipe</a>
+                    <a class="collapse-item" href="/mounting/circle">Montar Círculo</a>
                     <a class="collapse-item" href="utilities-border.html">Gerar Quadrante</a>
                 </div>
             </div>

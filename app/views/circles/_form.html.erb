@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <h1 class="h3 mb-2 text-gray-800"> Cadastrar Círculo </h1>
+    <div class="card shadow mb-4">
+      <div class="card-body">
+        <%= simple_form_for circle do |f| %>
+          <div class="row">
+            <div class="col-md-12">
+              <%= f.input :cor, label: "Cor do Círculo", class: "form-control" %>
+            </div>
+          </div>
+          <%= f.button :submit, "Cadastrar Círculo", class: "btn btn-primary"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "layouts/footer"%>
+</div>
+</div>
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>

@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_28_104546) do
+ActiveRecord::Schema.define(version: 2022_09_29_202024) do
+
+  create_table "circles", force: :cascade do |t|
+    t.string "cor"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "contacts", force: :cascade do |t|
     t.string "contato_1"
@@ -40,6 +46,8 @@ ActiveRecord::Schema.define(version: 2022_09_28_104546) do
     t.string "funcao"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "circle_id"
+    t.index ["circle_id"], name: "index_mountings_on_circle_id"
     t.index ["follower_id"], name: "index_mountings_on_follower_id"
     t.index ["team_id"], name: "index_mountings_on_team_id"
   end
@@ -59,6 +67,7 @@ ActiveRecord::Schema.define(version: 2022_09_28_104546) do
 
   add_foreign_key "contacts", "followers"
   add_foreign_key "followers", "parishes"
+  add_foreign_key "mountings", "circles"
   add_foreign_key "mountings", "followers"
   add_foreign_key "mountings", "teams"
 end
