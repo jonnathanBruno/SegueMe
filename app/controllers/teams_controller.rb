@@ -13,7 +13,7 @@ class TeamsController < ApplicationController
         @team = Team.new(team_params)
         respond_to do |format|
           if @team.save
-            format.html { redirect_to teams_path(), notice: "Equipe criada com sucesso." }
+            format.html { redirect_to new_team_url, notice: "Equipe criada com sucesso." }
             format.json { render :index, status: :created, location: @team }
           else
             format.html { render :new, status: :unprocessable_entity }

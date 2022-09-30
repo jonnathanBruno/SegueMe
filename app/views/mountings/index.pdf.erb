@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SegueMe</title>
+    <meta charset="UTF-8" content="width=device-width,initial-scale=1">
+  </head>
+
+  <body>
+    <table>
+    <thead>
+        <tr>
+        <th>Nome Seguidor</th>
+        <th>Função</th>
+        <th>Contato</th>
+        <th>Ano</th>
+        </tr>
+    </thead>
+
+    <tfoot>
+        <tbody>
+            <% @mountings.each do |mt| %>
+                <tr>
+                    <td class="show"><%= mt.follower.name %></td>
+                    <td class="show"><%= mt.occupation %></td>
+                    <td class="show"><%= mt.follower.contact.contact %></td>
+                    <td class="show"><%= mt.year %></td>
+                </tr>
+            <% end %>
+        </tbody>    
+    </tfoot>
+<table>    
+</body>
+</html>

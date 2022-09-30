@@ -5,8 +5,10 @@ ruby '3.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.7'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+
+gem 'pg', '~> 1.4', '>= 1.4.3', group: :production
+gem 'sqlite3', group: :development
+
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
@@ -56,3 +58,5 @@ gem "font-awesome-sass", "~> 6.2.0"
 gem "simple_form", "~> 5.1"
 gem 'simple_form_autocomplete'
 gem 'ransack'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'

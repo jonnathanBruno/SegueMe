@@ -17,7 +17,7 @@ class CirclesController < ApplicationController
 
     respond_to do |format|
       if @circle.save
-        format.html { redirect_to circles_path(), notice: "Círculo criada com sucesso." }
+        format.html { redirect_to new_circle_url, notice: "Círculo criada com sucesso." }
         format.json { render :show, status: :created, location: @circle }
       else
         format.html { render :new, status: :unprocessable_entity }
