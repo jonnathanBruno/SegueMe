@@ -1,10 +1,9 @@
 class Mounting < ApplicationRecord
   belongs_to :follower
-  belongs_to :team
-  belongs_to :circle
+  belongs_to :team, optional: true
+  belongs_to :circle, optional: true
 
-  validates :team_id, presence: true
-  validates :funcao, presence: true
-  validates :ano, presence: true
+  validates :occupation, presence: true
+  validates :year, presence: true
   validates :follower_id, presence: true, uniqueness: true
 end

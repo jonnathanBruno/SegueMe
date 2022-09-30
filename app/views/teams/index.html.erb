@@ -17,8 +17,8 @@
                     <tbody>
                         <% @teams.each do |team| %>
                         <tr>
-                            <td class="show"><%= team.nome_equipe %></td>
-                            <td class="show"><%= team.qnt_componente %> integrantes </td>
+                            <td class="show"><%= team.name %></td>
+                            <td class="show"><%= team.qnt %> integrantes </td>
                             <td>
                                 <%= link_to team, method: :delete, data: { confirm: 'Você tem certeza?' }, class:"btn btn-danger", style: "margin-bottom: 2px;" do %>
                                     <i class="fa-regular fa-trash-can"></i>

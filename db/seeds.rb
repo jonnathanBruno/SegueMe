@@ -1,9 +1,13 @@
 p "iniciando...."
 
-4.times do
-    Parish.create!(
-        nome_paroquia: "Paróquia #{rand(10.000)}"
-    )
-end
+Parish.create!(
+    name: "Paróquia de Teste 1"
+)
+
+Parish.create!(
+    name: "Paróquia de Teste 2"
+)
+
+
 
 p "terminou!"

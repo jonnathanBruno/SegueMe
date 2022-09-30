@@ -6,7 +6,7 @@ class MountingCirclesController < ApplicationController
     end
 
     def new
-        @teste = Mounting.new
+        @mounting = Mounting.new
 
         @jaSalvo = Mounting.all
         jaSalvo_ids = @jaSalvo.pluck(:follower_id).join(",")
@@ -14,16 +14,24 @@ class MountingCirclesController < ApplicationController
     end 
 
     def create
-        @teste = Mounting.new(mounting_params_circle)
-        @teste.save
-        p "ENTROU AQUI #################################################################"
+      @mounting = Mounting.new(mounting_params_circle)
+      respond_to do |format|
+        if @mounting.save
+          format.html { redirect_to new_mounting_circle_url, notice: "Encontrista adicionado com sucesso." }
+          format.json { render :new, status: :created, location: @mounting }
+        else
+          format.html { render :new, status: :unprocessable_entity}
+          format.json { render json: @mounting.errors, status: :unprocessable_entity }
+        end
+      end
+
     end
 
     def destroy
         @mounting.destroy
     
         respond_to do |format|
-          format.html { redirect_to "/mounting/circle", notice: "Encontrista removido com sucesso." }
+          format.html { redirect_to mounting_circles_url, notice: "Encontrista removido com sucesso." }
           format.json { head :no_content }
         end
     end
@@ -35,6 +43,6 @@ class MountingCirclesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def mounting_params_circle
-      params.require(:teste).permit(:ano, :funcao, :team_id, :follower_id, :circle_id)
+      params.require(:mounting).permit(:follower_id, :circle_id, :year, :occupation)
     end
 end

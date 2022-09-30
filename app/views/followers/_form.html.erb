@@ -6,26 +6,26 @@
         <%= simple_form_for follower do |f| %>
           <div class="row">
             <div class="col-md-6">
-              <%= f.input :nome, label: "Nome do Seguidor", class: "form-control" %>
+              <%= f.input :name, label: "Nome do Seguidor", class: "form-control" %>
             </div>
 
             <div class="col-md-2">
-              <%= f.input :idade, label: "Idade", class: "form-control" %>
+              <%= f.input :age, label: "Idade", class: "form-control" %>
             </div>
 
             <div class="col-md-4">
-              <%= f.association :parish, label_method: :nome_paroquia, include_blank: false, value_method: :id, label: "Paróquia" , class: "form-control"%>
+              <%= f.association :parish, label_method: :name, include_blank: false, value_method: :id, label: "Paróquia" , class: "form-control"%>
             </div>
           </div>
 
         <div class="row">
           <div class="col-md-6">
-            <%= f.input :endereco, label: "Endereço" %>
+            <%= f.input :address, label: "Endereço" %>
           </div>
 
           <%= f.fields_for :contact do |c| %>
             <div class="col-md-2">
-              <%= c.input :contato_1, label: "Contato" %>
+              <%= c.input :contact, label: "Contato" %>
             </div>
           <% end %>
 
@@ -36,7 +36,7 @@
 
         <div class="row">
           <div class="col-md-6 py-2">
-            <%= f.input :tipo_encontrista, as: :select, collection: ["Seguidor", "Seguimista"], label: "Seguidor ou Seguimista?", selected: "Seguidor" %>
+            <%= f.input :type_date, as: :select, collection: ["Seguidor", "Seguimista"], label: "Seguidor ou Seguimista?", selected: "Seguidor" %>
           </div>
           <div class="col-md-2 py-5">
             <div class="hm">?<div>Seguidor é quem trabalha no encontro, Seguimista é quem participa.</div></div>

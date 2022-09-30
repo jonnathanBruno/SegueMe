@@ -27,10 +27,10 @@
                     <tbody>
                         <% @followers.each do |follower| %>
                         <tr>
-                            <td class="show"><%= follower.nome %></td>
-                            <td class="show"><%= follower.idade %> anos </td>
-                            <td class="show"><%= follower.contact.contato_1 %></td>
-                            <td class="show"><%= follower.tipo_encontrista %></td>
+                            <td class="show"><%= follower.name%></td>
+                            <td class="show"><%= follower.age %> anos </td>
+                            <td class="show"><%= follower.contact.contact %></td>
+                            <td class="show"><%= follower.type_date %></td>
                             <td>
                                 <%= link_to follower,  class:"btn btn-warning", style: "margin-bottom: 2px;" do %>
                                     <i class="fa-solid fa-magnifying-glass"></i>

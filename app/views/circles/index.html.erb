@@ -16,7 +16,7 @@
                     <tbody>
                         <% @circles.each do |circle| %>
                         <tr>
-                            <td class="show"><%= circle.cor %></td>
+                            <td class="show"><%= circle.color %></td>
                             <td>
                                 <%= link_to circle, method: :delete, data: { confirm: 'Você tem certeza?' }, class:"btn btn-danger", style: "margin-bottom: 2px;" do %>
                                     <i class="fa-regular fa-trash-can"></i>

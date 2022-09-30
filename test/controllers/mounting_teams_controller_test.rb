@@ -1,6 +1,6 @@
 require "test_helper"
 
-class MountingsControllerTest < ActionDispatch::IntegrationTest
+class MountingTeamsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

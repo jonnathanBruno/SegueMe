@@ -1,17 +1,12 @@
 Rails.application.routes.draw do
 
-  root "followers#index"
-
-  resources :circles
+  root "teams#index"
   resources :followers, except: [:index]
+
+  resources :circles, only: [:index, :create, :new, :destroy]
   resources :teams, only: [:index, :create, :new, :destroy]
-  resources :mountings
-  resources :mounting_circles
-
-  get "mounting/team", to: "mountings#index"
-  get "mounting/team/new", to: "mountings#new"
-
-  get "mounting_circles/circle", to: "mounting_circles#index"
-  get "mounting_circles/circle/new", to: "mounting_circles#new"
+  resources :mounting_teams, only: [:index, :create, :new, :destroy]
+  resources :mounting_circles, only: [:index, :create, :new, :destroy]
+             
   get "followers/list/:tipo_encontrista", to: "followers#index"
 end

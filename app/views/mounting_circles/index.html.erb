@@ -8,11 +8,11 @@
                 <% @circles.each do |circle| %>
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="flush-headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#<%= circle.cor %>" aria-expanded="false" aria-controls="flush-collapseOne">
-                            <span class="show"><%= circle.cor %></span>
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#<%= circle.color %>" aria-expanded="false" aria-controls="flush-collapseOne">
+                            <span class="show"><%= circle.color %></span>
                         </button>
                         </h2>
-                        <div id="<%= circle.cor %>" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div id="<%= circle.color %>" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body">
                                <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -28,14 +28,14 @@
                                         <tfoot>
                                         <tbody>
                                             <% @mountings = Mounting.where(circle_id: circle.id) %>
-                                            <% @mountings.each do |mounting| %>
+                                            <% @mountings.each do |mc| %>
                                             <tr>
-                                                <td class="show"><%= mounting.follower.nome %></td>
-                                                <td class="show"><%= mounting.funcao %></td>
-                                                <td class="show"><%= mounting.follower.contact.contato_1 %></td>
-                                                <td class="show"><%= mounting.ano %></td>
+                                                <td class="show"><%= mc.follower.name%></td>
+                                                <td class="show"><%= mc.occupation %></td>
+                                                <td class="show"><%= mc.follower.contact.contact %></td>
+                                                <td class="show"><%= mc.year %></td>
                                                 <td>
-                                                    <%= link_to mounting, method: :delete, data: { confirm: 'Você tem certeza?' }, class:"btn btn-danger", style: "margin-bottom: 2px;" do %>
+                                                    <%= link_to mounting_circle_path(mc), method: :delete, data: { confirm: 'Você tem certeza?' }, class:"btn btn-danger", style: "margin-bottom: 2px;" do %>
                                                         <i class="fa-regular fa-trash-can"></i>
                                                     <% end %>
                                                 </td>
@@ -51,7 +51,7 @@
             </div>
         </div>
     </div>
-    <a href="/mounting/circle/new" class="btn btn-success mb-4">Inserir Equipista</a>
+    <%= link_to 'Inserir Equipista', new_mounting_circle_path, class:"btn btn-success mb-4" %>
     
 </div>
 </div>

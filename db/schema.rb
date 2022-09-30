@@ -10,17 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_29_202024) do
+ActiveRecord::Schema.define(version: 2022_09_30_142729) do
 
   create_table "circles", force: :cascade do |t|
-    t.string "cor"
+    t.string "color"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "contacts", force: :cascade do |t|
-    t.string "contato_1"
-    t.string "contato_2"
+    t.string "contact"
     t.integer "follower_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -28,39 +27,39 @@ ActiveRecord::Schema.define(version: 2022_09_29_202024) do
   end
 
   create_table "followers", force: :cascade do |t|
-    t.string "nome"
-    t.integer "idade"
+    t.string "name"
+    t.string "email"
+    t.integer "age"
+    t.string "address"
+    t.string "type_date"
     t.integer "parish_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "email"
-    t.string "endereco"
-    t.string "tipo_encontrista"
     t.index ["parish_id"], name: "index_followers_on_parish_id"
   end
 
   create_table "mountings", force: :cascade do |t|
     t.integer "follower_id", null: false
-    t.integer "team_id", null: false
-    t.date "ano"
-    t.string "funcao"
+    t.integer "team_id"
+    t.integer "circle_id"
+    t.date "year"
+    t.string "occupation"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "circle_id"
     t.index ["circle_id"], name: "index_mountings_on_circle_id"
     t.index ["follower_id"], name: "index_mountings_on_follower_id"
     t.index ["team_id"], name: "index_mountings_on_team_id"
   end
 
   create_table "parishes", force: :cascade do |t|
-    t.string "nome_paroquia"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "teams", force: :cascade do |t|
-    t.string "nome_equipe"
-    t.integer "qnt_componente"
+    t.string "name"
+    t.integer "qnt"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -3,26 +3,26 @@
     <div class="card shadow mb-4">
       <div class="card-body">
         <div class="card-header">
-            <h3 class="well"><%= @follower.nome %></h3>
+            <h3 class="well"><%= @follower.name %></h3>
         </div>
 
         <div class="container mt-4">
           <div class="form-horizontal">
 
             <div class="control-group">
-              <label class="control-label show"><strong>Encontrista: </strong> <%= @follower.tipo_encontrista %></label>
+              <label class="control-label show"><strong>Encontrista: </strong> <%= @follower.type_date %></label>
             </div>
 
             <div class="control-group">
-              <label class="control-label show"><strong>Idade: </strong> <%= @follower.idade %> anos</label>
+              <label class="control-label show"><strong>Idade: </strong> <%= @follower.age %> anos</label>
             </div>
 
             <div class="control-group">
-              <label class="control-label show"><strong>Paróquia: </strong><%= @follower.parish.nome_paroquia %></label>
+              <label class="control-label show"><strong>Paróquia: </strong><%= @follower.parish.name %></label>
             </div>
 
             <div class="control-group">
-                <label class="control-label show"><strong>Telefone: </strong><%= @follower.contact.contato_1 %></label>
+                <label class="control-label show"><strong>Telefone: </strong><%= @follower.contact.contact %></label>
             </div>
 
             <div class="control-group">
@@ -30,12 +30,12 @@
             </div>
 
             <div class="control-group">
-                <label class="control-label show"><strong>Endereço: </strong><%= @follower.endereco %></label>
+                <label class="control-label show"><strong>Endereço: </strong><%= @follower.address %></label>
             </div>
 
              <div class="control-group mt-4">
                 <%= link_to 'Editar', edit_follower_path(@follower), class:"btn btn-primary" %>
-                <%= link_to 'Voltar', "/followers/list/#{@follower.tipo_encontrista}", class:"btn btn-secondary" %>
+                <%= link_to 'Voltar', "/followers/list/#{@follower.type_date}", class:"btn btn-secondary" %>
             </div>
 
           </div>

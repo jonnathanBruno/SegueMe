@@ -45,6 +45,6 @@ class CirclesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def circle_params
-      params.require(:circle).permit(:cor)
+      params.require(:circle).permit(:color)
     end
 end
