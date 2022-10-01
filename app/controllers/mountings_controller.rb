@@ -7,7 +7,7 @@ class MountingsController < ApplicationController
             format.html
             format.json
             format.pdf do
-                render pdf: "index", template: "mountings/index", formats: [:pdf]
+                render pdf: "index", template: "mountings/index.html.erb"
             end
             #format.pdf {render template: "mountings/index", pdf: 'index'}
         end
