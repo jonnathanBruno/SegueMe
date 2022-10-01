@@ -1,6 +1,6 @@
 WickedPdf.config ||= {}
 WickedPdf.config.merge!({
-  layout: "index",
+  layout: "mountings/index",
 }) 
 
 #WickedPdf.config = {
