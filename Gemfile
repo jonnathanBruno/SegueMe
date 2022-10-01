@@ -63,4 +63,5 @@ gem "simple_form", "~> 5.1"
 gem 'simple_form_autocomplete'
 gem 'ransack'
 gem 'wicked_pdf'
-gem 'wkhtmltopdf-binary'
+gem 'wkhtmltopdf-binary', group: :development
+gem 'wkhtmltopdf-heroku', group: :production
