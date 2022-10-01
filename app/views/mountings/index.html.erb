@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>SegueMe</title>
-        <meta charset="UTF-8">
-        <%= wicked_pdf_stylesheet_link_tag "pdf" %>
-    </head>
 
-    <body>
         <% @circles.each do |circle| %>
           <h1 class="h3 mb-2 text-gray-800"><%= circle.color %></h1>
             <div class="card shadow mb-4">
@@ -61,5 +53,3 @@
             </table>
             <br>
         <%end%>  
-    </body>
-</html>
