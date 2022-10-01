@@ -1,26 +1,38 @@
 p "iniciando...."
 
-Parish.create!(
-    name: "Paróquia de Sant'Ana e São Joaquim"
-)
+30.times do
+    Follower.create!(
+        name: "Seguidor #{rand(10.000)}",
+        email: "teste@gmail.com",
+        age: 20,
+        address: "endereço de teste, nº 20",
+        type_date: "Seguimista",
+        parish_id: 1
+    )
 
-Parish.create!(
-    name: "Paróquia de Mirassol"
-)
+    follower = Follower.last
+    Contact.create!(
+        contact: "(84) 99183-4526",
+        follower_id: follower.id
+    )
 
-Circle.create!(
-    color: "Paróquia de Sant'Ana e São Joaquim"
-)
+end
 
-Parish.create!(
-    color: "Paróquia de Mirassol"
-)
+30.times do
+    Follower.create!(
+        name: "Seguidor #{rand(10.000)}",
+        email: "teste@gmail.com",
+        age: 20,
+        address: "endereço de teste, nº 20",
+        type_date: "Seguidor",
+        parish_id: 1
+    )
 
-
-
-
-
-
-
+    follower = Follower.last
+    Contact.create!(
+        contact: "(84) 99183-4526",
+        follower_id: follower.id
+    )
+end
 
 p "terminou!"
