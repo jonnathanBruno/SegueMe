@@ -1,6 +1,6 @@
 class Follower < ApplicationRecord
   belongs_to :parish
-  has_one :mounting
+  has_one :mounting, dependent: :destroy
   has_one :contact, dependent: :destroy
   accepts_nested_attributes_for :contact
 

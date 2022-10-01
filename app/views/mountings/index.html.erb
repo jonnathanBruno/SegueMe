@@ -12,7 +12,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <% @mountings = Mounting.where(circle_id: circle.id) %>
+                        <% @mountings = Mounting.where(circle_id: circle.id).order(:occupation) %>
                         <% @mountings.each do |mc| %>
                             <tr>
                                 <td class="show"><%= mc.follower.name%></td>
@@ -40,7 +40,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% @mountings = Mounting.where(team_id: team.id) %>
+                    <% @mountings = Mounting.where(team_id: team.id).order(:occupation) %>
                     <% @mountings.each do |mc| %>
                         <tr>
                             <td class="show"><%= mc.follower.name%></td>

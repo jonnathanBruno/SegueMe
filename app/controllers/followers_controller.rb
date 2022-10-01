@@ -3,7 +3,7 @@ class FollowersController < ApplicationController
 
   # GET /followers or /followers.json
   def index
-      @followers = Follower.buscar_tipo_encontrista(params[:tipo_encontrista])    
+      @followers = Follower.buscar_tipo_encontrista(params[:tipo_encontrista]).order(:name)    
   end
 
   # GET /followers/1 or /followers/1.json
@@ -51,10 +51,11 @@ class FollowersController < ApplicationController
 
   # DELETE /followers/1 or /followers/1.json
   def destroy
+    typeDate = @follower.type_date
     @follower.destroy
 
     respond_to do |format|
-      format.html { redirect_to followers_url, notice: "Encontrista excluído com sucesso." }
+      format.html { redirect_to "/followers/list/#{typeDate}", notice: "Encontrista excluído com sucesso." }
       format.json { head :no_content }
     end
   end

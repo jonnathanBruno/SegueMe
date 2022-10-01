@@ -27,9 +27,10 @@
                                         </thead>
                                         <tfoot>
                                             <tbody>
-                                                <% @mountings = Mounting.where(circle_id: circle.id) %>
+                                                <% @mountings = Mounting.where(circle_id: circle.id).order(:occupation) %>
                                                 <% @mountings.each do |mc| %>
                                                 <tr>
+                                                    <td class="show"><%= mc.follower.name%></td>
                                                     <td class="show"><%= mc.follower.name%></td>
                                                     <td class="show"><%= mc.occupation %></td>
                                                     <td class="show"><%= mc.follower.contact.contact %></td>
