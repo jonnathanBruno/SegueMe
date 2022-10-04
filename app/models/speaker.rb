@@ -4,5 +4,5 @@ class Speaker < ApplicationRecord
 
     validates :name, presence: true
     validates :address, presence: true
-    validates :birth, presence: true
+    validates :contact, presence: true
 end

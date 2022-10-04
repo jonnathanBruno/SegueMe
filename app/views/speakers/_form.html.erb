@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <h1 class="h3 mb-2 text-gray-800"> <%= @textoTitulo %> </h1>
+    <div class="card shadow mb-4">
+      <div class="card-body">
+
+        <%= simple_form_for speaker do |c| %>
+            <div class="row">
+              <div class="col-md-8">
+                <%= c.input :name, label: "Nome do Palestrante"%>
+              </div>
+
+              <div class="col-md-4">
+                <%= c.association :parish, label_method: :name, include_blank: false, value_method: :id, label: "Paróquia"%>
+              </div>
+            </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <%= c.input :address, label: "Endereço" %>
+            </div>
+
+            <div class="col-md-4">
+              <%= c.input :email, label: "Email" %>
+            </div>  
+
+            <div class="col-md-2">
+              <%= c.input :contact, label: "Contato" %>
+            </div> 
+          </div>
+
+          <%= c.button :submit, @textoTitulo , class: "btn btn-primary mt-3"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "layouts/footer"%>
+</div>
+</div>
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fa-solid fa-circle-arrow-up"></i>
+</a>
+
+
+             

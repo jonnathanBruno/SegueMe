@@ -7,6 +7,7 @@ Rails.application.routes.draw do
             :lectures,
             :followers,
             :participants,
+            :speakers,
             :mountings,
             :mounting_teams, 
             :mounting_circles          
