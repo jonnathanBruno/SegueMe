@@ -1,5 +1,7 @@
 class LecturesController < ApplicationController
-    # GET /lectures or /lectures.json
+  before_action :set_lecture, only: %i[ destroy ]
+
+  # GET /lectures or /lectures.json
   def index
     @lectures = Lecture.order("date_lecture").all
   end
