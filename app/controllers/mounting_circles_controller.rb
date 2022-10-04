@@ -7,10 +7,9 @@ class MountingCirclesController < ApplicationController
 
     def new
         @mounting = Mounting.new
-
-        @jaSalvo = Mounting.all
-        jaSalvo_ids = @jaSalvo.pluck(:follower_id).join(",")
-        @followers = Follower.sem_inseridos(jaSalvo_ids)
+        @jaSalvo = Mounting.condicao_montagem("participant_id")
+        jaSalvo_ids = @jaSalvo.pluck(:participant_id).join(",")
+        @participants = Participant.sem_inseridos(jaSalvo_ids)
     end 
 
     def create
@@ -43,6 +42,6 @@ class MountingCirclesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def mounting_params_circle
-      params.require(:mounting).permit(:follower_id, :circle_id, :year, :occupation)
+      params.require(:mounting).permit(:participant_id, :circle_id, :year, :occupation)
     end
 end

@@ -32,8 +32,8 @@
                                             <tr>
                                                 <td class="show"><%= mt.follower.name %></td>
                                                 <td class="show"><%= mt.occupation %></td>
-                                                <td class="show"><%= mt.follower.contact.contact %></td>
-                                                <td class="show"><%= mt.year %></td>
+                                                <td class="show"><%= mt.follower.contact %></td>
+                                                <td class="show"><%= so_ano(mt.year) %></td>
                                                 <td>
                                                     <%= link_to mounting_team_path(mt), method: :delete, data: { confirm: 'Você tem certeza?' }, class:"btn btn-danger", style: "margin-bottom: 2px;" do %>
                                                         <i class="fa-regular fa-trash-can"></i>

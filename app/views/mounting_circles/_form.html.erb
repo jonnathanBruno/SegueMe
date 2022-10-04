@@ -18,8 +18,8 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                  <%= f.input :follower_id, as: :select, :collection => @followers,
-                      :label_method => :name, :value_method => :id, :label => "Escolher Seguidor" , :include_blank => false %>
+                  <%= f.input :participant_id, as: :select, :collection => @participants,
+                      :label_method => :name, :value_method => :id, :label => "Escolher Equipista" , :include_blank => false %>
                 </div>
             </div>
             <%= f.button :submit, "Inserir na Equipe", class: "btn btn-primary"%>

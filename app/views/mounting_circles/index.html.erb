@@ -27,14 +27,13 @@
                                         </thead>
                                         <tfoot>
                                             <tbody>
-                                                <% @mountings = Mounting.where(circle_id: circle.id).order(:occupation) %>
+                                                <% @mountings = Mounting.where(circle_id: circle.id) %>
                                                 <% @mountings.each do |mc| %>
                                                 <tr>
-                                                    <td class="show"><%= mc.follower.name%></td>
-                                                    <td class="show"><%= mc.follower.name%></td>
+                                                    <td class="show"><%= mc.participant.name%></td>
                                                     <td class="show"><%= mc.occupation %></td>
-                                                    <td class="show"><%= mc.follower.contact.contact %></td>
-                                                    <td class="show"><%= mc.year %></td>
+                                                    <td class="show"><%= mc.participant.contact %></td>
+                                                    <td class="show"><%= so_ano(mc.year) %></td>
                                                     <td>
                                                         <%= link_to mounting_circle_path(mc), method: :delete, data: { confirm: 'Você tem certeza?' }, class:"btn btn-danger", style: "margin-bottom: 2px;" do %>
                                                             <i class="fa-regular fa-trash-can"></i>

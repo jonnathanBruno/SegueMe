@@ -5,4 +5,6 @@ class Follower < ApplicationRecord
     validates :name, presence: true
     validates :address, presence: true
     validates :birth, presence: true
+
+
 end
