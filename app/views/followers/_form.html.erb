@@ -1,49 +1,38 @@
 <div class="container-fluid">
-  <h1 class="h3 mb-2 text-gray-800"><%= @textoPagina %></h1>
+  <h1 class="h3 mb-2 text-gray-800"> Cadastrar Seguidor </h1>
     <div class="card shadow mb-4">
       <div class="card-body">
 
-        <%= simple_form_for follower do |f| %>
-          <div class="row">
-            <div class="col-md-6">
-              <%= f.input :name, label: "Nome do Seguidor", class: "form-control" %>
+        <%= simple_form_for follower do |c| %>
+            <div class="row">
+              <div class="col-md-6">
+                <%= c.input :name, label: "Nome do Seguidor"%>
+              </div>
+
+              <div class="col-md-2">
+                <%= c.input :birth, discard_year: true, order: [:day, :month], label: "Aniversário"%>
+              </div>
+
+              <div class="col-md-4">
+                <%= c.association :parish, label_method: :name, include_blank: false, value_method: :id, label: "Paróquia"%>
+              </div>
             </div>
 
-            <div class="col-md-2">
-              <%= f.input :age, label: "Idade", class: "form-control" %>
+          <div class="row">
+            <div class="col-md-6">
+              <%= c.input :address, label: "Endereço" %>
             </div>
 
             <div class="col-md-4">
-              <%= f.association :parish, label_method: :name, include_blank: false, value_method: :id, label: "Paróquia" , class: "form-control"%>
-            </div>
-          </div>
+              <%= c.input :email, label: "Email" %>
+            </div>  
 
-        <div class="row">
-          <div class="col-md-6">
-            <%= f.input :address, label: "Endereço" %>
-          </div>
-
-          <%= f.fields_for :contact do |c| %>
             <div class="col-md-2">
               <%= c.input :contact, label: "Contato" %>
-            </div>
-          <% end %>
-
-          <div class="col-md-4">
-            <%= f.input :email, label: "Email" %>
-          </div>  
-        </div>
-
-        <div class="row">
-          <div class="col-md-6 py-2">
-            <%= f.input :type_date, as: :select, collection: ["Seguidor", "Seguimista"], label: "Seguidor ou Seguimista?", selected: "Seguidor" %>
+            </div> 
           </div>
-          <div class="col-md-2 py-5">
-            <div class="hm">?<div>Seguidor é quem trabalha no encontro, Seguimista é quem participa.</div></div>
-          </div>
-        </div>  
 
-          <%= f.button :submit, @textoPagina, class: "btn btn-primary mt-3"%>
+          <%= c.button :submit, "Cadastrar Seguidor", class: "btn btn-primary mt-3"%>
         <% end %>
       </div>
     </div>

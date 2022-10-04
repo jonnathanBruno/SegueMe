@@ -1,11 +1,5 @@
 <div class="container-fluid">
-    <h1 class="h3 mb-2 text-gray-800">
-        <%= if params[:tipo_encontrista] == "Seguidor"
-         "Seguidores Cadastrados"
-        else 
-         "Seguimistas Cadastrados"
-        end %> 
-    </h1>
+    <h1 class="h3 mb-2 text-gray-800">Seguidores Cadastrados</h1>
     
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -16,21 +10,21 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                        <th class="col-5">Nome do <%=params[:tipo_encontrista]%></th>
-                        <th class="col-1">Idade</th>
+                        <th class="col-4">Nome do Seguidor</th>
+                        <th class="col-2">Email</th>
                         <th class="col-2">Contato</th>
-                        <th class="col-2">Encontrista</th>
-                        <th colspan="1"></th>
+                        <th class="col-1">Aniversário</th>
+                        <th colspan="3"></th>
                         </tr>
                     </thead>
                     <tfoot>
                     <tbody>
                         <% @followers.each do |follower| %>
                         <tr>
-                            <td class="show"><%= follower.name%></td>
-                            <td class="show"><%= follower.age %> anos </td>
-                            <td class="show"><%= follower.contact.contact %></td>
-                            <td class="show"><%= follower.type_date %></td>
+                            <td class="show"><%= follower.name %> </td>
+                            <td class="show"><%= follower.email %> </td>
+                            <td class="show"><%= follower.contact %></td>
+                            <td class="show"><%= mes_dia_curto(follower.birth) %></td>
                             <td>
                                 <%= link_to follower,  class:"btn btn-warning", style: "margin-bottom: 2px;" do %>
                                     <i class="fa-solid fa-magnifying-glass"></i>

@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <h1 class="h3 mb-2 text-gray-800">Palestras</h1>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3"></div>
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                        <th class="col-6">Título Palestra</th>
+                        <th class="col-3">Data</th>
+                        <th class="col-2">Horário</th>
+                        <th colspan="1"></th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                    <tbody>
+                        <% @lectures.each do |lecture| %>
+                        <tr>
+                            <td class="show"><%= lecture.name %></td>
+                            <td class="show"><%= lecture.date_lecture %></td>
+                            <td class="show"><%= lecture.time_lecture %></td>
+                            <td>
+                                <%= link_to lecture, method: :delete, data: { confirm: 'Você tem certeza?' }, class:"btn btn-danger", style: "margin-bottom: 2px;" do %>
+                                    <i class="fa-regular fa-trash-can"></i>
+                                <% end %>
+                            </td>
+                        </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+</div>
+</div>
+
+<!-- Footer -->
+<%= render "layouts/footer"%>
+<!-- End of Footer -->
+</div>
+<!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
