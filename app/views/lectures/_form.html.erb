@@ -10,7 +10,7 @@
           </div>
           <div class="row">
             <div class="col-md-6">
-              <%= f.input :date_lecture, label: "Data"%>
+              <%= f.input :date_lecture, order: [:day, :month, :year], label: "Data"%>
             </div>
             <div class="col-md-6">
               <%= f.input :time_lecture, label: "Horário"%>

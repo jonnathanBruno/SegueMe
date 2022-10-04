@@ -19,7 +19,7 @@
                         <% @lectures.each do |lecture| %>
                         <tr>
                             <td class="show"><%= lecture.name %></td>
-                            <td class="show"><%= mes_dia(lecture.date_lecture) %></td>
+                            <td class="show"><%= mes_dia_ano_completo(lecture.date_lecture) %></td>
                             <td class="show"><%= hora_minuto(lecture.time_lecture) %></td>
                             <td>
                                 <%= link_to lecture, method: :delete, data: { confirm: 'Você tem certeza?' }, class:"btn btn-danger", style: "margin-bottom: 2px;" do %>
