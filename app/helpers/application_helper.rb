@@ -6,4 +6,8 @@ module ApplicationHelper
     def mes_dia_curto(datetime)
         datetime.strftime('%e %b')
     end
+
+    def hora_minuto(datetime)
+        datetime.strftime('%Hh:%M')
+    end
 end

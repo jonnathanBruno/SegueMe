@@ -1,0 +1,47 @@
+  <div class="container-fluid">
+  <h1 class="h3 mb-2 text-gray-800">Detalhes Seguimista</h1>
+    <div class="card shadow mb-4">
+      <div class="card-body">
+        <div class="card-header">
+            <h3 class="well"><%= @participant.name %></h3>
+        </div>
+
+        <div class="container mt-4">
+          <div class="form-horizontal">
+
+            <div class="control-group">
+              <label class="control-label show"><strong>Encontrista: </strong> Seguimista </label>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label show"><strong>Aniversário: </strong> <%= mes_dia(@participant.birth) %></label>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label show"><strong>Paróquia: </strong><%= @participant.parish.name %></label>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label show"><strong>Telefone: </strong><%= @participant.contact %></label>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label show"><strong>Email: </strong><%= @participant.email %></label>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label show"><strong>Endereço: </strong><%= @participant.address %></label>
+            </div>
+
+             <div class="control-group mt-4">
+                <%= link_to 'Editar', edit_participant_path(@participant), class:"btn btn-primary" %>
+                <%= link_to 'Voltar', participants_path, class:"btn btn-secondary" %>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

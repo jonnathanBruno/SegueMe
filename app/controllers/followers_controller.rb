@@ -13,10 +13,12 @@ class FollowersController < ApplicationController
   # GET /followers/new
   def new
     @follower = Follower.new
+    @textoTitulo = "Cadastrar Seguidor"
   end
 
   # GET /followers/1/edit
   def edit
+    @textoTitulo = "Editar Seguidor"
   end
 
   # POST /followers or /followers.json

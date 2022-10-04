@@ -1,7 +1,7 @@
 class LecturesController < ApplicationController
     # GET /lectures or /lectures.json
   def index
-    @lectures = Lecture.all
+    @lectures = Lecture.order("date_lecture").all
   end
 
   # GET /lectures/new
@@ -15,7 +15,7 @@ class LecturesController < ApplicationController
 
     respond_to do |format|
       if @lecture.save
-        format.html { redirect_to lectures_url, notice: "Palestra criado com sucesso." }
+        format.html { redirect_to lectures_url, notice: "Palestra criada com sucesso." }
         format.json { render :show, status: :created, location: @lecture }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -30,7 +30,7 @@ class LecturesController < ApplicationController
     @lecture.destroy
 
     respond_to do |format|
-      format.html { redirect_to lectures_url, notice: "Palestra excluído com sucesso." }
+      format.html { redirect_to lectures_url, notice: "Palestra excluída com sucesso." }
       format.json { head :no_content }
     end
   end
