@@ -10,5 +10,6 @@ Rails.application.routes.draw do
             :speakers,
             :mountings,
             :mounting_teams, 
-            :mounting_circles          
+            :mounting_circles,
+            :mounting_lectures              
 end

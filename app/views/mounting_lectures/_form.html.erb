@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <h1 class="h3 mb-2 text-gray-800">Montar Palestra</h1>
+    <div class="card shadow mb-4">
+      <div class="card-body">
+        <%= simple_form_for @mounting, url: mounting_lectures_path do |f| %>
+            <div class="row">
+                <div class="col-md-8">
+                    <%= f.association :lecture, label_method: :name, include_blank: false, value_method: :id, label: "Palestra"%>
+                </div>
+                 <div class="col-md-4">
+                    <%= f.input :occupation, as: :select, collection: ["Palestrante"], label: "Função", selected: "Palestrante" %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                  <%= f.input :speaker_id, as: :select, :collection => @speakers,
+                      :label_method => :name, :value_method => :id, :label => "Escolher Palestrante" , :include_blank => false %>
+                </div>
+                <div class="col-md-4">
+                    <%= f.input :year, label: "Ano do Encontro", order: [:year] %>
+                </div>
+            </div>
+            <%= f.button :submit, "Inserir na Palestra", class: "btn btn-primary"%>
+            <%= link_to 'Voltar', mounting_lectures_path, class:"btn btn-secondary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "layouts/footer"%>
+</div>
+</div>
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>

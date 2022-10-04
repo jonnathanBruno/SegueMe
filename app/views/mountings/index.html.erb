@@ -1,55 +1,77 @@
-
-        <% @circles.each do |circle| %>
-          <h1 class="h3 mb-2 text-gray-800"><%= circle.color %></h1>
-            <div class="card shadow mb-4">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th class="show" scope="col-6">Nome Seguidor</th>
-                            <th class="show" scope="col-2">Função</th>
-                            <th class="show" scope="col-2">Contato</th>
-                            <th class="show" scope="col-2">Ano</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% @mountings = Mounting.where(circle_id: circle.id).order(:occupation) %>
-                        <% @mountings.each do |mc| %>
-                            <tr>
-                                <td class="show"><%= mc.follower.name%></td>
-                                <td class="show"><%= mc.occupation %></td>
-                                <td class="show"><%= mc.follower.contact.contact %></td>
-                                <td class="show"><%= mc.year %></td>
-                            </tr>
-                        <% end %>
-                    </tbody>
-                </table>
-            </div>
-            <br>
-        <%end%>
-
-
-        <% @teams.each do |team| %>
-            <h1 class="h3 mb-2 text-gray-800"><%= team.name %></h1>
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
+<h1 style="text-align:center">Relação dos Seguimistas</h1>
+<br>
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th class="show-quadrante text-center" scope="col-6">Nome Completo <br> Endereço </th>
+                <th class="show-quadrante text-center" scope="col-2">Apelido <br> Email</th>
+                <th class="show-quadrante text-center" scope="col-2">Nascimento <br> Contato</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @participants.each do |mc| %>
+                <tr>
+                    <td class="show-quadrante text-center"><%= mc.name%></td>
+                    <td class="show-quadrante text-center"><%= "--" if !mc.surname.present? %><%= mc.surname %></td>
+                    <td class="show-quadrante text-center"><%= mes_dia_ano_completo(mc.birth) %></td>
+                </tr>
                     <tr>
-                        <th class="show" scope="col-6">Nome Seguidor</th>
-                        <th class="show" scope="col-2">Função</th>
-                        <th class="show" scope="col-2">Contato</th>
-                        <th class="show" scope="col-2">Ano</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% @mountings = Mounting.where(team_id: team.id).order(:occupation) %>
-                    <% @mountings.each do |mc| %>
-                        <tr>
-                            <td class="show"><%= mc.follower.name%></td>
-                            <td class="show"><%= mc.occupation %></td>
-                            <td class="show"><%= mc.follower.contact.contact %></td>
-                            <td class="show"><%= mc.year %></td>
-                        </tr>
-                    <% end %>
-                </tbody>
-            </table>
-            <br>
-        <%end%>  
+                    <td class="show-quadrante text-center"><%= mc.address%></td>
+                    <td class="show-quadrante text-center"><%= "--" if !mc.email.present? %><%= mc.email %></td>
+                    <td class="show-quadrante text-center"><%= "--" if !mc.contact.present? %><%= mc.contact %></td>
+                </tr>
+                <tr style="height: 20px"></tr>
+            <% end %>
+        </tbody>
+    </table>
+<br>
+
+
+<h1 style="text-align:center; page-break-before:always">Relação de Equipes</h1>
+<% @teams.each do |team| %>
+    <h1 class="h3 mb-2 text-gray-800"><%= team.name %></h1>
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th class="show-quadrante" colspan="3" scope="col-12">Jovens Coordenadores</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @mountings = Mounting.where(team_id: team.id).where(occupation: "Jovem Coordenador") %>
+            <% @mountings.each do |mc| %>
+                <tr>
+                    <td class="show-quadrante" colspan="2"><%= mc.follower.name%></td>
+                    <td class="show-quadrante"><%= mes_dia_ano(mc.follower.birth) %></td>
+                </tr>
+                    <tr>
+                    <td class="show-quadrante"><%= mc.follower.address%></td>
+                    <td class="show-quadrante"><%= "--" if !mc.follower.email.present? %><%= mc.follower.email %></td>
+                    <td class="show-quadrante"><%= "--" if !mc.follower.contact.present? %><%= mc.follower.contact %></td>
+                </tr>
+                <tr style="height: 20px"></tr>
+            <% end %>
+        </tbody>
+    </table>
+<% end %>
+
+<h1 style="text-align:center; page-break-before:always">Palestrantes</h1>
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+        <tr>
+            <th class="show-quadrante" scope="col-4">Tema</th>
+            <th class="show-quadrante" scope="col-3">Data/Horário</th>
+            <th class="show-quadrante" scope="col-3">Palestrante</th>
+            <th class="show-quadrante" scope="col-2">Contato</th>
+        </tr>
+    </thead>
+    <tbody>
+        <%  @palestras.each do |mc| %>
+            <tr>
+                <td class="show-quadrante"><%= mc.lecture.name%></td>
+                <td class="show-quadrante"><%= mes_dia_ano_completo(mc.lecture.date_lecture)%><br><%= hora_minuto(mc.lecture.time_lecture)%></td>
+                <td class="show-quadrante"><%= mc.speaker.name%></td>
+                <td class="show-quadrante"><%= "--" if !mc.speaker.contact.present? %><%= mc.speaker.contact %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

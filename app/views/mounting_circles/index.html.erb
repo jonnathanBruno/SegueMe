@@ -14,11 +14,12 @@
                         </h2>
                         <div id="<%= circle.color %>" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body">
+
                                <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
-                                            <th class="col-5">Nome Seguidor</th>
+                                            <th class="col-5">Coordenador</th>
                                             <th class="col-2">Função</th>
                                             <th class="col-2">Contato</th>
                                             <th class="col-2">Ano</th>
@@ -27,7 +28,7 @@
                                         </thead>
                                         <tfoot>
                                             <tbody>
-                                                <% @mountings = Mounting.where(circle_id: circle.id) %>
+                                                <% @mountings = Mounting.where(circle_id: circle.id, occupation: "Coordenador") %>
                                                 <% @mountings.each do |mc| %>
                                                 <tr>
                                                     <td class="show"><%= mc.participant.name%></td>
@@ -43,8 +44,42 @@
                                                 <% end %>
                                             </tbody>
                                         </tfoot>    
-                                    </table>
+                                    </table>             
                                 </div>
+
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                            <th class="col-5">Nome Seguimistas</th>
+                                            <th class="col-2">Função</th>
+                                            <th class="col-2">Contato</th>
+                                            <th class="col-2">Ano</th>
+                                            <th colspan="1"></th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tbody>
+                                                <% @mountings = Mounting.where(circle_id: circle.id).where.not(occupation: "Coordenador") %>
+                                                <% @mountings.each do |mc| %>
+                                                <tr>
+                                                    <td class="show"><%= mc.participant.name%></td>
+                                                    <td class="show"><%= mc.occupation %></td>
+                                                    <td class="show"><%= mc.participant.contact %></td>
+                                                    <td class="show"><%= so_ano(mc.year) %></td>
+                                                    <td>
+                                                        <%= link_to mounting_circle_path(mc), method: :delete, data: { confirm: 'Você tem certeza?' }, class:"btn btn-danger", style: "margin-bottom: 2px;" do %>
+                                                            <i class="fa-regular fa-trash-can"></i>
+                                                        <% end %>
+                                                    </td>
+                                                </tr>
+                                                <% end %>
+                                            </tbody>
+                                        </tfoot>    
+                                    </table>             
+                                </div>
+
+
                             </div>
                         </div>
                     </div>

@@ -10,7 +10,7 @@
             </div>
             <div class="row">
                 <div class="col-md-8">
-                    <%= f.input :occupation, as: :select, collection: ["Equipista", "Coordenador", "Casal Apoio", "Casal"], label: "Função na Equipe", selected: "Equipista" %>
+                    <%= f.input :occupation, as: :select, collection: ["Jovem Equipista", "Jovem Coordenador", "Casal Coordenador", "Casal Equipista", "Casal Apoio"], label: "Função na Equipe", selected: "Equipista" %>
                 </div>
                 <div class="col-md-4">
                     <%= f.input :year, label: "Ano do Encontro", order: [:year] %>

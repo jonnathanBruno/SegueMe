@@ -13,8 +13,12 @@
               <label class="control-label show"><strong>Encontrista: </strong> Seguimista </label>
             </div>
 
+             <div class="control-group">
+              <label class="control-label show"><strong>Apelido: </strong> <%= @participant.surname %> </label>
+            </div>
+
             <div class="control-group">
-              <label class="control-label show"><strong>Aniversário: </strong> <%= mes_dia(@participant.birth) %></label>
+              <label class="control-label show"><strong>Data de Nascimento: </strong> <%= mes_dia_ano(@participant.birth) %></label>
             </div>
 
             <div class="control-group">

@@ -1,7 +1,8 @@
 class MountingsController < ApplicationController
     def index
         @mountings = Mounting.all
-        @circles = Circle.all
+        @participants = Participant.all
+        @palestras = Mounting.where("lecture_id IS NOT NULL")
         @teams = Team.all
         respond_to do |format|
             format.html {render "mountings/index", :layout => "pdf.html.erb"}

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_03_205443) do
+ActiveRecord::Schema.define(version: 2022_10_04_143441) do
 
   create_table "circles", force: :cascade do |t|
     t.string "color"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 2022_10_03_205443) do
     t.string "type_date"
     t.string "contact"
     t.integer "parish_id"
+    t.string "surname"
     t.index ["parish_id"], name: "index_participants_on_parish_id"
   end
 

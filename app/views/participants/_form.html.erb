@@ -4,32 +4,36 @@
       <div class="card-body">
 
         <%= simple_form_for participant do |c| %>
-            <div class="row">
-              <div class="col-md-6">
-                <%= c.input :name, label: "Nome do Seguimista"%>
-              </div>
-
-              <div class="col-md-2">
-                <%= c.input :birth, discard_year: true, order: [:day, :month], label: "Aniversário"%>
-              </div>
-
-              <div class="col-md-4">
-                <%= c.association :parish, label_method: :name, include_blank: false, value_method: :id, label: "Paróquia"%>
-              </div>
+          <div class="row">
+            <div class="col-md-8">
+              <%= c.input :name, label: "Nome do Seguimista"%>
+            </div>    
+            <div class="col-md-4">
+              <%= c.input :surname, label: "Apelido"%>
             </div>
+          </div>
 
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-8">
               <%= c.input :address, label: "Endereço" %>
             </div>
 
             <div class="col-md-4">
               <%= c.input :email, label: "Email" %>
             </div>  
+       
+          </div>
 
-            <div class="col-md-2">
+          <div class="row">
+             <div class="col-md-4">
+              <%= c.input :birth, order: [:day, :month, :year], label: "Data de Nascimento"%>
+            </div>
+            <div class="col-md-4">
               <%= c.input :contact, label: "Contato" %>
             </div> 
+            <div class="col-md-4">
+                <%= c.association :parish, label_method: :name, include_blank: false, value_method: :id, label: "Paróquia"%>
+            </div>
           </div>
 
           <%= c.button :submit, @textoTitulo , class: "btn btn-primary mt-3"%>
