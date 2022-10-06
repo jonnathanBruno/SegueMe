@@ -1,12 +1,12 @@
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
         <tr>
-            <th class="show-quadrante" colspan="3" scope="col-12"><%=funcao%></th>
+            <th class="show-quadrante" colspan="3" scope="col-12"><%= funcao %></th>
         </tr>
     </thead>
     <tbody>
-        <% buscarMountingsEspecificosEquipe(team.id) %>
-        <% @mountings.each do |mc| %>
+        <% existeFuncao?(team.id, funcao) %>
+        <% @funcoesPresente.each do |mc| %>
             <tr>
                 <td class="show-quadrante" colspan="2"><%= mc.follower.name%></td>
                 <td class="show-quadrante"><%= mes_dia_ano(mc.follower.birth) %></td>

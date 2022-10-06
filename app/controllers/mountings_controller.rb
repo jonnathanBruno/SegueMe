@@ -2,7 +2,7 @@ class MountingsController < ApplicationController
     def index
         @mountings = Mounting.all
         @participants = Participant.all
-        @palestras = Mounting.where("lecture_id IS NOT NULL")
+        @palestras = Lecture.all
         @teams = Team.all
         respond_to do |format|
             format.html {render "mountings/index", :layout => "pdf.html.erb"}
@@ -26,7 +26,7 @@ class MountingsController < ApplicationController
     end
 
     def speakers
-        @palestras = Mounting.where("lecture_id IS NOT NULL")
+        @palestras = Lecture.all
         respond_to do |format|
             format.html {render "mountings/speakers", :layout => "pdf.html.erb"}
             format.json
