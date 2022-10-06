@@ -3,7 +3,8 @@ class MountingsController < ApplicationController
         @mountings = Mounting.all
         @participants = Participant.all
         @palestras = Lecture.all
-        @teams = Team.all
+        @teams = Team.nao_dirigentes
+        @teamsManager = Team.dirigentes
         respond_to do |format|
             format.html {render "mountings/index", :layout => "pdf.html.erb"}
             format.json
@@ -15,7 +16,8 @@ class MountingsController < ApplicationController
     end
 
     def followers
-        @teams = Team.all
+        @teams = Team.nao_dirigentes
+        @teamsManager = Team.dirigentes
         respond_to do |format|
             format.html {render "mountings/followers", :layout => "pdf.html.erb"}
             format.json

@@ -2,7 +2,22 @@
 <h1 class="quebra-de-pagina">Relação de Equipes</h1>
 <% @teams.each do |team| %>
     <h1 class="h3 mb-2 text-gray-800"><%= team.name %></h1>
-        <%= render "layouts/table_followers", team: team, funcao: "Jovem Coordenador" %>
-        <%= render "layouts/table_followers", team: team, funcao: "Jovem Equipista" %>
+        <%= render "layouts/table_followers", team: team, funcao: "Jovem Coordenador" if existeFuncao?(team.id, "Jovem Coordenador")%>
+        <%= render "layouts/table_followers", team: team, funcao: "Casal Coordenador" if existeFuncao?(team.id, "Casal Coordenador")%>
+        <%= render "layouts/table_followers", team: team, funcao: "Casal Apoio" if existeFuncao?(team.id, "Casal Apoio")%>
+        <%= render "layouts/table_followers", team: team, funcao: "Jovem Apoio" if existeFuncao?(team.id, "Jovem Apoio")%>
+        <%= render "layouts/table_followers", team: team, funcao: "Casal Equipista" if existeFuncao?(team.id, "Casal Equipista")%>
+        <%= render "layouts/table_followers", team: team, funcao: "Jovem Equipista" if existeFuncao?(team.id, "Jovem Equipista")%>
     <p class="quebra-de-pagina"></p>
+<% end %>
+
+<h1 class="quebra-de-pagina">Equipe Dirigente</h1>
+<% @teamsManager.each do |team| %>
+    <h1 class="h3 mb-2 text-gray-800"><%= team.name %></h1>
+        <%= render "layouts/table_followers", team: team, funcao: "Jovem Coordenador" if existeFuncao?(team.id, "Jovem Coordenador")%>
+        <%= render "layouts/table_followers", team: team, funcao: "Casal Coordenador" if existeFuncao?(team.id, "Casal Coordenador")%>
+        <%= render "layouts/table_followers", team: team, funcao: "Casal Apoio" if existeFuncao?(team.id, "Casal Apoio")%>
+        <%= render "layouts/table_followers", team: team, funcao: "Jovem Apoio" if existeFuncao?(team.id, "Jovem Apoio")%>
+        <%= render "layouts/table_followers", team: team, funcao: "Casal Equipista" if existeFuncao?(team.id, "Casal Equipista")%>
+        <%= render "layouts/table_followers", team: team, funcao: "Jovem Equipista" if existeFuncao?(team.id, "Jovem Equipista")%>
 <% end %>
