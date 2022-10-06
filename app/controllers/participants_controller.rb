@@ -3,7 +3,9 @@ class ParticipantsController < ApplicationController
 
     # GET /participants or /participants.json
     def index
-      @participants = Participant.order('name').all
+      current_page = (params[:page] || 1).to_i
+      @participants = Participant.order('name')
+                                 .page(current_page)
     end
   
     # GET /participants/1 or /participants/1.json

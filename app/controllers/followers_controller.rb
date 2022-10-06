@@ -3,7 +3,9 @@ class FollowersController < ApplicationController
 
   # GET /followers or /followers.json
   def index
-    @followers = Follower.order('name').all
+    current_page = (params[:page] || 1).to_i
+    @followers = Follower.order('name')
+                         .page(current_page)
   end
 
   # GET /followers/1 or /followers/1.json
