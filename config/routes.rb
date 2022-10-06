@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
   root "teams#index"
+  get "/mountings/followers", to: "mountings#followers"
+  get "/mountings/speakers", to: "mountings#speakers"
+
+  resources :mountings, only: [:index, :followers, :speakers]
 
   resources :circles, 
             :teams, 
@@ -8,8 +12,9 @@ Rails.application.routes.draw do
             :followers,
             :participants,
             :speakers,
-            :mountings,
             :mounting_teams, 
             :mounting_circles,
-            :mounting_lectures              
+            :mounting_lectures 
+            
+
 end

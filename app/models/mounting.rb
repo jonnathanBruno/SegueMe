@@ -9,4 +9,7 @@ class Mounting < ApplicationRecord
 
   validates :occupation, presence: true
   validates :year, presence: true
+
+  scope :buscar_montagem_de_equipes, -> (valor) {where(team_id: valor) if valor.present?}
+  scope :buscar_existe_funcao, -> (valor, funcao) {where(team_id:valor, occupation: funcao) if valor.present? if funcao.present? }
 end

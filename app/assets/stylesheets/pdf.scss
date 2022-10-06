@@ -50,6 +50,11 @@
     font-size: 1.0rem;
 }
 
+.quebra-de-pagina{
+    page-break-before:always;
+    text-align: center;
+}
+
 body {
     margin: 0;
     font-family: var(--bs-font-sans-serif);

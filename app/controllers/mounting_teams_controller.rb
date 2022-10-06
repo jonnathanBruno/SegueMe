@@ -33,7 +33,7 @@ class MountingTeamsController < ApplicationController
           format.json { head :no_content }
         end
     end
-
+    
     private
     def set_mounting_teams
       @mounting = Mounting.find(params[:id])

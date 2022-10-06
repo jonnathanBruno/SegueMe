@@ -1,0 +1,20 @@
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+        <tr>
+            <th class="show-quadrante" scope="col-4">Tema</th>
+            <th class="show-quadrante" scope="col-3">Data/Horário</th>
+            <th class="show-quadrante" scope="col-3">Palestrante</th>
+            <th class="show-quadrante" scope="col-2">Contato</th>
+        </tr>
+    </thead>
+    <tbody>
+        <%  @palestras.each do |mc| %>
+            <tr>
+                <td class="show-quadrante"><%= mc.lecture.name%></td>
+                <td class="show-quadrante"><%= mes_dia_ano_completo(mc.lecture.date_lecture)%><br><%= hora_minuto(mc.lecture.time_lecture)%></td>
+                <td class="show-quadrante"><%= mc.speaker.name%></td>
+                <td class="show-quadrante"><%= "--" if !mc.speaker.contact.present? %><%= mc.speaker.contact %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

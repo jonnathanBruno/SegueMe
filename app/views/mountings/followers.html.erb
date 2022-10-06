@@ -1,8 +1,3 @@
-<!-- Renderizar relação de seguimistas -->
-<h1 style="text-align:center">Relação dos Seguimistas</h1>
-<br>
-<%= render "layouts/table_participants", participants: @participants%>
-
 <!-- Renderizar equipes e equipistas -->
 <h1 class="quebra-de-pagina">Relação de Equipes</h1>
 <% @teams.each do |team| %>
@@ -11,7 +6,3 @@
         <%= render "layouts/table_followers", team: team, funcao: "Jovem Equipista" %>
     <p class="quebra-de-pagina"></p>
 <% end %>
-
-<!-- Renderizar palestrantes -->
-<h1 class="quebra-de-pagina">Palestrantes</h1>
-<%= render "layouts/table_speakers", palestras: @palestras %>

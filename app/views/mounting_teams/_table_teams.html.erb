@@ -1,0 +1,30 @@
+ <div class="table-responsive">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+            <th class="col-5"><%= funcao %></th>
+            <th class="col-2">Função</th>
+            <th class="col-2">Contato</th>
+            <th class="col-2">Ano</th>
+            <th colspan="1"></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% existeFuncao?(team.id, funcao) %>                                    
+            <% @funcoesPresente.each do |mt| %>
+            <tr>
+                <td class="show"><%= mt.follower.name %></td>
+                <td class="show"><%= mt.occupation %></td>
+                <td class="show"><%= "--" if !mt.follower.contact.present? %><%= mt.follower.contact %></td>
+                <td class="show"><%= so_ano(mt.year) %></td>
+                <td>
+                    <%= link_to mounting_team_path(mt), method: :delete, data: { confirm: 'Você tem certeza?' }, class:"btn btn-danger", style: "margin-bottom: 2px;" do %>
+                        <i class="fa-regular fa-trash-can"></i>
+                    <% end %>
+                </td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
