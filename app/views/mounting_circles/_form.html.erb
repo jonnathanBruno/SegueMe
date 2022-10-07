@@ -5,7 +5,7 @@
         <%= simple_form_for @mounting, url: mounting_circles_path do |f| %>
             <div class="row">
                 <div class="col-md-12">
-                    <%= f.association :circle, label_method: :color, include_blank: false, value_method: :id, label: "Círculo"%>
+                    <%= f.association :circle, label_method: :color, :include_blank => "Selecione o círculo", value_method: :id, label: "Círculo"%>
                 </div>
             </div>
             <div class="row">

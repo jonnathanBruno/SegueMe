@@ -15,7 +15,13 @@ class MountingCirclesController < ApplicationController
     def create
       @mounting = Mounting.new(mounting_params_circle)
       respond_to do |format|
-        if @mounting.save
+        if @mounting.circle_id == nil
+          format.html { redirect_to new_mounting_circle_url, alert: "Erro: Escolha o círculo!" }
+
+        elsif @mounting.participant_id == nil
+          format.html { redirect_to new_mounting_circle_url, alert: "Erro: seguimista está vazio!" }
+
+        elsif @mounting.save
           format.html { redirect_to new_mounting_circle_url, notice: "Encontrista adicionado com sucesso." }
           format.json { render :new, status: :created, location: @mounting }
         else

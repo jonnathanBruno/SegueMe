@@ -15,7 +15,13 @@ class MountingTeamsController < ApplicationController
     def create
         @mounting = Mounting.new(mounting_teams_params)
         respond_to do |format|
-          if @mounting.save
+          if @mounting.team_id == nil
+            format.html { redirect_to new_mounting_team_url, alert: "Erro: Escolha a equipe!" }
+
+          elsif @mounting.follower_id == nil
+            format.html { redirect_to new_mounting_team_url, alert: "Erro: seguidor está vazio!" }
+
+          elsif @mounting.save
             format.html { redirect_to new_mounting_team_url, notice: "Encontrista adicionado com sucesso." }
             format.json { render :new, status: :created, location: @mounting }
           else

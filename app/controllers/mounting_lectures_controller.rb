@@ -15,7 +15,13 @@ class MountingLecturesController < ApplicationController
     def create
       @mounting = Mounting.new(mounting_params_lecture)
       respond_to do |format|
-        if @mounting.save
+        if @mounting.lecture_id == nil
+          format.html { redirect_to new_mounting_lecture_url, alert: "Erro: Escolha a palestra!" }
+
+        elsif @mounting.speaker_id == nil
+          format.html { redirect_to new_mounting_lecture_url, alert: "Erro: palestrante está vazio!" }
+
+        elsif @mounting.save
           format.html { redirect_to new_mounting_lecture_url, notice: "Palestrante adicionado com sucesso." }
           format.json { render :new, status: :created, location: @mounting }
         else

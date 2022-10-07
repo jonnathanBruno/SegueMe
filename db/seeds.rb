@@ -73,7 +73,4 @@ p "iniciando...."
         )
     end
 
-
-
-
 p "terminou!"

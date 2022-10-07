@@ -5,7 +5,7 @@
         <%= simple_form_for @mounting, url: mounting_lectures_path do |f| %>
             <div class="row">
                 <div class="col-md-8">
-                    <%= f.association :lecture, label_method: :name, include_blank: false, value_method: :id, label: "Palestra"%>
+                    <%= f.association :lecture, label_method: :name, :include_blank => "Selecione a palestra", value_method: :id, label: "Palestra"%>
                 </div>
                  <div class="col-md-4">
                     <%= f.input :occupation, as: :select, collection: ["Palestrante"], label: "Função", selected: "Palestrante" %>

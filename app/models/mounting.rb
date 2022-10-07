@@ -8,6 +8,12 @@ class Mounting < ApplicationRecord
   belongs_to :speaker, optional: true
 
   validates :occupation, presence: true
+  validates :team, presence: { strict: true }
+  validates :follower, presence: { strict: true }
+  validates :circle, presence: { strict: true }
+  validates :participant, presence: { strict: true }
+  validates :lecture, presence: { strict: true }
+  validates :speaker, presence: { strict: true }
   validates :year, presence: true
 
   scope :buscar_montagem_de_equipes, -> (valor) {where(team_id: valor) if valor.present?}
