@@ -5,6 +5,7 @@ class MountingsController < ApplicationController
         @palestras = Lecture.all
         @teams = Team.nao_dirigentes
         @teamsManager = Team.dirigentes
+        @circles = Circle.all
         respond_to do |format|
             format.html {render "mountings/index", :layout => "pdf.html.erb"}
             format.json

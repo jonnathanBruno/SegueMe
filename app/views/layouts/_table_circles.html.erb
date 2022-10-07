@@ -1,0 +1,31 @@
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+        <tr class="<%= if circle.color == 'Vermelho' 
+                        'vermelho' 
+                        elsif circle.color == 'Verde' 
+                        'verde' 
+                        elsif circle.color == 'Azul'  
+                        'azul'
+                        elsif circle.color == 'Amarelo' 
+                        'amarelo'
+                        elsif circle.color == 'Rosa' 
+                        'rosa'
+                        else
+                        'laranja'
+                        end
+                    %>" >
+
+            <th class="show-quadrante text-center" scope="col-6">Nome Completo</th>
+            <th class="show-quadrante text-center" scope="col-2">Apelido</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% buscarFuncaoCirculo(circle.id, funcao) %>
+        <% @funcao.each do |c| %>
+            <tr>
+                <td class="show-quadrante text-center"><%= c.participant.name %></td>
+                <td class="show-quadrante text-center"><%= "--" if !c.participant.surname.present? %><%= c.participant.surname %></td>
+                <tr style="height: 20px"></tr>
+        <% end %>
+    </tbody>
+</table>
