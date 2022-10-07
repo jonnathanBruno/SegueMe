@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root "teams#index"
+  root "followers#index"
   get "/mountings/followers", to: "mountings#followers"
   get "/mountings/speakers", to: "mountings#speakers"
 
