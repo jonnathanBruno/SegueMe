@@ -16,6 +16,7 @@ class Mounting < ApplicationRecord
   scope :montagem_palestras, -> (valor) {where(lecture_id: valor) if valor.present?}
   
   scope :coordenador, -> (id) {where(circle_id: id, occupation: "Coordenador") if id.present? }
+  scope :casal_apoio, -> (id) {where(circle_id: id, occupation: "Casal Apoio") if id.present? }
   scope :buscar_existe_circulo, -> (id) {where(circle_id: id) if id.present? }
   scope :buscar_funcao_circulo, -> (id, funcao) {where(circle_id: id, occupation: funcao) if id.present? if funcao.present?}
 end

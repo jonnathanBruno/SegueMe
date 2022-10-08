@@ -15,7 +15,7 @@
 
 <h1 class="quebra-de-pagina"> Relação de Círculos </h1>
 <% @circles.each do |circle| %>
-    <h1 class="h3 mb-2 text-gray-800"><%= circle.color if existeCirculo?(circle.id) %></h1>
+    <h1 class="h3 mb-2 text-gray-800"><%= "Círculo " + circle.color if existeCirculo?(circle.id) %></h1>
         <%= render "layouts/table_circles", circle: circle, funcao: "Seguimista" if existeCirculo?(circle.id)%>
     <p class="quebra-de-pagina"></p>
 <% end %>

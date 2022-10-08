@@ -14,9 +14,18 @@
                         'laranja'
                         end
                     %>" >
-
-            <th class="show-quadrante text-center" scope="col-6">Nome Completo</th>
-            <th class="show-quadrante text-center" scope="col-2">Apelido</th>
+            <% buscarCoordenadorCirculo(circle.id) %>
+            <th class="show-quadrante text-center th-padrinhos" colspan="12" scope="col-12">
+                PADRINHOS JOVENS: 
+                    <% @coordenadores.each do |c| %>
+                        <%= c.participant.name + " | " %> 
+                    <%end%> 
+                    <br>
+                PADRINHOS CASAL:
+                    <% @casalApoio.each do |c| %>
+                        <%= c.participant.name + " | " %> 
+                    <%end%>
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -25,7 +34,6 @@
             <tr>
                 <td class="show-quadrante text-center"><%= c.participant.name %></td>
                 <td class="show-quadrante text-center"><%= "--" if !c.participant.surname.present? %><%= c.participant.surname %></td>
-                <tr style="height: 20px"></tr>
         <% end %>
     </tbody>
 </table>

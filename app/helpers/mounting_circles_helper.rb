@@ -8,4 +8,9 @@ module MountingCirclesHelper
         @funcao = Mounting.buscar_funcao_circulo(id, funcao)
         @funcao.present?
     end
+
+    def buscarCoordenadorCirculo(id)
+        @coordenadores = Mounting.coordenador(id)
+        @casalApoio = Mounting.casal_apoio(id)
+    end
 end
