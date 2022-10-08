@@ -61,7 +61,6 @@
     background-color: yellow;
 }
 
-
 .rosa{
     background-color: pink;
 }
@@ -70,6 +69,29 @@
     background-color: orangered;
 }
 
+.titulo-capa{
+    text-align: center;
+}
+
+capa-logo{
+    height: 500px;
+    width: 500px;
+}
+
+.margem{
+    margin-top: 80px !important;
+}
+
+.texto-padroeiro{
+    text-align: justify;
+    font-size: 22px;
+    text-indent: 50px;
+}
+
+.texto-convite{
+    font-size: 22px;
+    text-indent: 50px;
+}
 
 .show-quadrante{
     font-size: 1.0rem;

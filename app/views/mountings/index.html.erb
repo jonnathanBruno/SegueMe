@@ -1,7 +1,24 @@
+<%= render "capa" %>
+<p class="quebra-de-pagina"></p>
+
+<%= render "padroeiro_encontro" %>
+<p class="quebra-de-pagina"></p>
+
+<%= render "padroeiro_paroquia" %>
+<p class="quebra-de-pagina"></p>
+
 <!-- Renderizar relação de seguimistas -->
 <h1 style="text-align:center">Relação dos Seguimistas</h1>
 <br>
-<%= render "layouts/table_participants", participants: @participants%>
+<%= render "layouts/table_participants", participants: @participants %>
+
+
+<h1 class="quebra-de-pagina"> Relação de Círculos </h1>
+<% @circles.each do |circle| %>
+    <h1 class="h3 mb-2 text-gray-800"><%= circle.color if existeCirculo?(circle.id) %></h1>
+        <%= render "layouts/table_circles", circle: circle, funcao: "Seguimista" if existeCirculo?(circle.id)%>
+    <p class="quebra-de-pagina"></p>
+<% end %>
 
 <!-- Renderizar equipes e equipistas -->
 <h1 class="quebra-de-pagina">Relação de Equipes</h1>
@@ -25,13 +42,6 @@
         <%= render "layouts/table_followers", team: team, funcao: "Jovem Apoio" if existeFuncao?(team.id, "Jovem Apoio")%>
         <%= render "layouts/table_followers", team: team, funcao: "Casal Equipista" if existeFuncao?(team.id, "Casal Equipista")%>
         <%= render "layouts/table_followers", team: team, funcao: "Jovem Equipista" if existeFuncao?(team.id, "Jovem Equipista")%>
-<% end %>
-
-<h1 class="quebra-de-pagina"> Relação de Círculos </h1>
-<% @circles.each do |circle| %>
-    <h1 class="h3 mb-2 text-gray-800"><%= circle.color if existeCirculo?(circle.id) %></h1>
-        <%= render "layouts/table_circles", circle: circle, funcao: "Seguimista" if existeCirculo?(circle.id)%>
-    <p class="quebra-de-pagina"></p>
 <% end %>
 
 <!-- Renderizar palestrantes -->
