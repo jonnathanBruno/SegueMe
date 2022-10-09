@@ -10,6 +10,10 @@ class MountingCirclesController < ApplicationController
         @jaSalvo = Mounting.condicao_montagem("participant_id")
         jaSalvo_ids = @jaSalvo.pluck(:participant_id).join(",")
         @participants = Participant.sem_inseridos(jaSalvo_ids)
+
+        @jaSalvo = Mounting.condicao_montagem("follower_id")
+        jaSalvo_ids = @jaSalvo.pluck(:follower_id).join(",")
+        @followers = Follower.sem_inseridos(jaSalvo_ids)
     end 
 
     def create
@@ -18,8 +22,8 @@ class MountingCirclesController < ApplicationController
         if @mounting.circle_id == nil
           format.html { redirect_to new_mounting_circle_url, alert: "Erro: Escolha o círculo!" }
 
-        elsif @mounting.participant_id == nil
-          format.html { redirect_to new_mounting_circle_url, alert: "Erro: seguimista está vazio!" }
+        elsif @mounting.participant_id == nil && @mounting.follower_id == nil
+          format.html { redirect_to new_mounting_circle_url, alert: "Erro: seguimista ou seguidor está vazio!" }
 
         elsif @mounting.save
           format.html { redirect_to new_mounting_circle_url, notice: "Encontrista adicionado com sucesso." }
@@ -48,6 +52,6 @@ class MountingCirclesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def mounting_params_circle
-      params.require(:mounting).permit(:participant_id, :circle_id, :year, :occupation)
+      params.require(:mounting).permit(:participant_id, :follower_id, :circle_id, :year, :occupation)
     end
 end

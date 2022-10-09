@@ -8,7 +8,7 @@
     </thead>
     <tbody>
         <% participants.each do |p| %>
-            <tr>
+            <tr style="background-color: #fbfbfb;">
                 <td class="show-quadrante text-center"><%= p.name%></td>
                 <td class="show-quadrante text-center"><%= "--" if !p.surname.present? %><%= p.surname %></td>
                 <td class="show-quadrante text-center"><%= mes_dia_ano_completo(p.birth) %></td>

@@ -12,20 +12,55 @@
         </thead>
         <tfoot>
             <tbody>
-                <% buscarFuncaoCirculo(circle.id, funcao)%>
-                <% @funcao.each do |mc| %>
-                <tr>
-                    <td class="show"><%= mc.participant.name%></td>
-                    <td class="show"><%= mc.occupation %></td>
-                    <td class="show"><%= mc.participant.contact %></td>
-                    <td class="show"><%= so_ano(mc.year) %></td>
-                    <td>
-                        <%= link_to mounting_circle_path(mc), method: :delete, data: { confirm: 'Você tem certeza?' }, class:"btn btn-danger", style: "margin-bottom: 2px;" do %>
-                            <i class="fa-regular fa-trash-can"></i>
-                        <% end %>
-                    </td>
-                </tr>
-                <% end %>
+                <%if funcao == "Seguimista" %>
+                    <% buscarFuncaoCirculo(circle.id, funcao)%>
+                    <% @funcao.each do |mc| %>
+                    <tr>
+                        <td class="show"><%= mc.participant.name%></td>
+                        <td class="show"><%= mc.occupation %></td>
+                        <td class="show"><%= "--" if !mc.participant.contact.present? %><%= mc.participant.contact %></td>
+                        <td class="show"><%= so_ano(mc.year) %></td>
+                        <td>
+                            <%= link_to mounting_circle_path(mc), method: :delete, data: { confirm: 'Você tem certeza?' }, class:"btn btn-danger", style: "margin-bottom: 2px;" do %>
+                                <i class="fa-regular fa-trash-can"></i>
+                            <% end %>
+                        </td>
+                    </tr>
+                    <% end %>
+
+                <% elsif funcao == "Coordenador"%>
+                    <% buscarCoordenadorCirculo(circle.id)%>
+                    <% @coordenadores.each do |mc| %>
+                    <tr>
+                        <td class="show"><%= mc.follower.name%></td>
+                        <td class="show"><%= mc.occupation %></td>
+                        <td class="show"><%= "--" if !mc.follower.contact.present? %><%= mc.follower.contact %></td>
+                        <td class="show"><%= so_ano(mc.year) %></td>
+                        <td>
+                            <%= link_to mounting_circle_path(mc), method: :delete, data: { confirm: 'Você tem certeza?' }, class:"btn btn-danger", style: "margin-bottom: 2px;" do %>
+                                <i class="fa-regular fa-trash-can"></i>
+                            <% end %>
+                        </td>
+                    </tr>
+                    <% end %>
+
+                <% else %>
+                    <% buscarCasalCirculo(circle.id)%>
+                    <%  @casalApoio.each do |mc| %>
+                    <tr>
+                        <td class="show"><%= mc.follower.name%></td>
+                        <td class="show"><%= mc.occupation %></td>
+                        <td class="show"><%= "--" if !mc.follower.contact.present? %><%= mc.follower.contact %></td>
+                        <td class="show"><%= so_ano(mc.year) %></td>
+                        <td>
+                            <%= link_to mounting_circle_path(mc), method: :delete, data: { confirm: 'Você tem certeza?' }, class:"btn btn-danger", style: "margin-bottom: 2px;" do %>
+                                <i class="fa-regular fa-trash-can"></i>
+                            <% end %>
+                        </td>
+                    </tr>
+                    <% end %>
+                <%end%>
+                    
             </tbody>
         </tfoot>    
     </table>             

@@ -14,9 +14,9 @@
                         </h2>
                         <div id="<%= circle.color %>" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body">
-                                <%= render "table_circle", circle: circle, funcao: "Coordenador" if buscarFuncaoCirculo(circle.id, "Coordenador")%>
-                                <%= render "table_circle", circle: circle, funcao: "Casal Apoio" if buscarFuncaoCirculo(circle.id, "Casal Apoio")%>
-                                <%= render "table_circle", circle: circle, funcao: "Seguimista" if buscarFuncaoCirculo(circle.id, "Seguimista")%>
+                                <%= render "table_circle", circle: circle, funcao: "Coordenador" %>
+                                <%= render "table_circle", circle: circle, funcao: "Casal Apoio" %>
+                                <%= render "table_circle", circle: circle, funcao: "Seguimista" %>
                             </div>
                         </div>
                     </div>

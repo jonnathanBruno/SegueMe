@@ -15,15 +15,16 @@
                         end
                     %>" >
             <% buscarCoordenadorCirculo(circle.id) %>
+            <% buscarCasalCirculo(circle.id) %>
             <th class="show-quadrante text-center th-padrinhos" colspan="12" scope="col-12">
                 PADRINHOS JOVENS: 
                     <% @coordenadores.each do |c| %>
-                        <%= c.participant.name + " | " %> 
+                        <%= c.follower.name + " | " %> 
                     <%end%> 
                     <br>
                 PADRINHOS CASAL:
                     <% @casalApoio.each do |c| %>
-                        <%= c.participant.name + " | " %> 
+                        <%= c.follower.name + " | " %> 
                     <%end%>
             </th>
         </tr>

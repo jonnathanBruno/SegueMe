@@ -11,6 +11,9 @@ module MountingCirclesHelper
 
     def buscarCoordenadorCirculo(id)
         @coordenadores = Mounting.coordenador(id)
+    end
+
+    def buscarCasalCirculo(id)
         @casalApoio = Mounting.casal_apoio(id)
     end
 end

@@ -9,17 +9,23 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-6">
                     <%= f.input :occupation, as: :select, collection: ["Seguimista", "Coordenador", "Casal Apoio"], label: "Função no Círculo", selected: "Seguimista" %>
                 </div>
-                <div class="col-md-4">
+
+                <div class="col-md-6">
                     <%= f.input :year, label: "Ano do Encontro", order: [:year] %>
                 </div>
+
             </div>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-6" id="participante">
                   <%= f.input :participant_id, as: :select, :collection => @participants,
                       :label_method => :name, :value_method => :id, :label => "Escolher Equipista" , :include_blank => false %>
+                </div>
+                <div class="col-md-6" id="seguidor">
+                  <%= f.input :follower_id, as: :select, :collection => @followers,
+                      :label_method => :name, :value_method => :id, :label => "Escolher Padrinho" , :include_blank => false %>
                 </div>
             </div>
             <%= f.button :submit, "Inserir no Círculo", class: "btn btn-primary"%>
