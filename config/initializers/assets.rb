@@ -14,4 +14,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w( admin.css tabela.css tudo.css fonts.css autoComplete.css autoCompleteTema.css
                                                   admin.js bootstrap.js chart.js autoComplete.js
                                                   chart_area.js chart_pie.js jq.js
-                                                  jquery.js table.js mask.js mounting.js )
+                                                  jquery.js table.js mask.js mounting.js quadrante.js )
