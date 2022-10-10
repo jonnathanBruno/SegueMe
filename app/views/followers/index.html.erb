@@ -23,7 +23,7 @@
                         <tr>
                             <td class="show"><%= follower.name %> </td>
                             <td class="show"><%= follower.email %> </td>
-                            <td class="show"><%= follower.contact %></td>
+                            <td class="show"><%= "--" if !follower.contact.present? %><%= follower.contact %></td>
                             <td class="show"><%= mes_dia_curto(follower.birth) %></td>
                             <td>
                                 <%= link_to follower,  class:"btn btn-warning", style: "margin-bottom: 2px;" do %>
