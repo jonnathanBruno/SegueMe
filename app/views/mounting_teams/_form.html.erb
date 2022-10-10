@@ -18,7 +18,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                  <%= f.input :follower_id, as: :select, :collection => @followers,
+                  <%= f.input :follower_id, as: :select, :collection => @followers,  input_html: { id: "seguidoresTeams" },
                       :label_method => :name, :value_method => :id, :label => "Escolher Seguidor" , :include_blank => false %>
                 </div>
             </div>
