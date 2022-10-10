@@ -22,4 +22,8 @@ module ApplicationHelper
     def render_if(template, condition)
         render template if condition
     end
+
+    def maiuscula(texto)
+        texto.upcase
+    end
 end

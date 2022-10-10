@@ -10,13 +10,13 @@
     <tbody>
         <% palestras.each do |mc| %>
             <tr>
-                <td class="show-quadrante"><%= mc.name%></td>
-                <td class="show-quadrante"><%= mes_dia_ano_completo(mc.date_lecture)%><br><%= hora_minuto(mc.time_lecture)%></td>
+                <td class="show-quadrante"><%= maiuscula(mc.name) %></td>
+                <td class="show-quadrante"><%= maiuscula(mes_dia_ano_completo(mc.date_lecture)) %><br><%= hora_minuto(mc.time_lecture)%></td>
 
                 <% montagemPalestras(mc.id) %>
                 <td class="show-quadrante">
                     <% @mountingLectures.each do |mc| %>
-                        <%= mc.speaker.name %> <br>
+                        <%= maiuscula(mc.speaker.name) %> <br>
                     <% end %>
                 </td>
                 <td class="show-quadrante">

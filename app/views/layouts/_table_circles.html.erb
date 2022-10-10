@@ -19,12 +19,12 @@
             <th class="show-quadrante text-center th-padrinhos" colspan="12" scope="col-12">
                 PADRINHOS JOVENS: 
                     <% @coordenadores.each do |c| %>
-                        <%= c.follower.name + " | " %> 
+                        <%= maiuscula(c.follower.name) + " | " %> 
                     <%end%> 
                     <br>
                 PADRINHOS CASAL:
                     <% @casalApoio.each do |c| %>
-                        <%= c.follower.name + " | " %> 
+                        <%= maiuscula(c.follower.name) + " | " %> 
                     <%end%>
             </th>
         </tr>
@@ -33,8 +33,8 @@
         <% buscarFuncaoCirculo(circle.id, funcao) %>
         <% @funcao.each do |c| %>
             <tr>
-                <td class="show-quadrante text-center"><%= c.participant.name %></td>
-                <td class="show-quadrante text-center"><%= "--" if !c.participant.surname.present? %><%= c.participant.surname %></td>
+                <td class="show-quadrante text-center"><%= maiuscula(c.participant.name) %></td>
+                <td class="show-quadrante text-center"><%= "--" if !c.participant.surname.present? %><%= maiuscula(c.participant.surname) %></td>
         <% end %>
     </tbody>
 </table>

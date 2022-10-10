@@ -9,13 +9,13 @@
     <tbody>
         <% participants.each do |p| %>
             <tr style="background-color: #fbfbfb;">
-                <td class="show-quadrante text-center"><%= p.name%></td>
-                <td class="show-quadrante text-center"><%= "--" if !p.surname.present? %><%= p.surname %></td>
-                <td class="show-quadrante text-center"><%= mes_dia_ano_completo(p.birth) %></td>
+                <td class="show-quadrante text-center"><%= maiuscula(p.name) %></td>
+                <td class="show-quadrante text-center"><%= "--" if !p.surname.present? %><%= maiuscula(p.surname) %></td>
+                <td class="show-quadrante text-center"><%= maiuscula(mes_dia_ano_completo(p.birth)) %></td>
             </tr>
                 <tr>
-                <td class="show-quadrante text-center"><%= p.address%></td>
-                <td class="show-quadrante text-center"><%= "--" if !p.email.present? %><%= p.email %></td>
+                <td class="show-quadrante text-center"><%= maiuscula(p.address) %></td>
+                <td class="show-quadrante text-center"><%= "--" if !p.email.present? %><%= maiuscula(p.email) %></td>
                 <td class="show-quadrante text-center"><%= "--" if !p.contact.present? %><%= p.contact %></td>
             </tr>
             <tr style="height: 20px"></tr>
