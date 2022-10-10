@@ -9,6 +9,7 @@ Bundler.require(*Rails.groups)
 module SegueMe
   class Application < Rails::Application
     config.load_defaults 6.1
+    config.i18n.default_locale = :"pt-BR"
 
     config.to_prepare do
       Devise::SessionsController.layout "devise"
