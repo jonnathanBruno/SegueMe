@@ -38,4 +38,7 @@ class MountingsController < ApplicationController
             end
         end
     end
+
+    def quadrante
+    end
 end

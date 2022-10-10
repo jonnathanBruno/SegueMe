@@ -1,4 +1,15 @@
 @charset "UTF-8";
+@import 'simple_form_autocomplete';
+@import "font-awesome";
+@font-face {
+    font-family: "Poetsen One"; 
+    src: url("//db.onlinewebfonts.com/t/e7f249e71a563eed9c495835657eb9c2.eot");
+}
+
+@font-face {
+    font-family: "Uni Sans Heavy CAPS"; 
+    src: url("//db.onlinewebfonts.com/t/161edcf1defa00caa0730d5eb8de8bbc.eot"); 
+    src: url("//db.onlinewebfonts.com/t/161edcf1defa00caa0730d5eb8de8bbc.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/161edcf1defa00caa0730d5eb8de8bbc.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/161edcf1defa00caa0730d5eb8de8bbc.woff") format("woff"), url("//db.onlinewebfonts.com/t/161edcf1defa00caa0730d5eb8de8bbc.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/161edcf1defa00caa0730d5eb8de8bbc.svg#Uni Sans Heavy CAPS") format("svg"); }
 
 /*!
  * Bootstrap v5.0.2 (https://getbootstrap.com/)
@@ -45,12 +56,20 @@
     }
 }
 
+h1,h2,h3,h4,h5{
+    font-family: 'Poetsen One', sans-serif;
+}
+
+td, th, p{
+    font-family: 'Uni Sans Heavy CAPS', sans-serif;
+}
+
 .th-padrinhos{
     font-size: 18px;
 }
 
 .vermelho{
-    background-color: #e30000;
+    background-color: #d31313;
     color: white
 }
 
@@ -60,7 +79,8 @@
 }
 
 .azul{
-    background-color: blue;
+    background-color: #0000cb;
+    color: white;
 }
 
 .amarelo{
@@ -68,15 +88,18 @@
 }
 
 .rosa{
-    background-color: pink;
+    background-color: #cf00c3;
+    color: white;
 }
 
 .laranja{
     background-color: orangered;
+    color: white;
 }
 
 .titulo-capa{
     text-align: center;
+    color: black;
 }
 
 capa-logo{

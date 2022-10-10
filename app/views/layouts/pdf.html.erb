@@ -4,12 +4,13 @@
     <title>SegueMe</title>
     <meta name="viewport" charset="UTF-8" content="width=device-width,initial-scale=1">
     <!-- Libraries Stylesheet -->
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-     <%= wicked_pdf_stylesheet_link_tag "pdf" %>
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
+      <%= wicked_pdf_stylesheet_link_tag "pdf" %>
   </head>
 
   <body style="margin:20px">
     <%= yield %>
+    <%= javascript_include_tag 'mounting', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>

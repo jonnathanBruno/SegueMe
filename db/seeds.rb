@@ -73,4 +73,12 @@ p "iniciando...."
         )
     end
 
+    10.times do
+        Lecture.create!(
+            name: "Nome de Palastra para Teste #{rand(10.000)}",
+            date_lecture: rand(365).days.ago,
+            time_lecture: rand(365).days.ago
+        )
+    end
+
 p "terminou!"
