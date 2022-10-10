@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SegueMe</title>
+    <meta name="viewport" charset="UTF-8" content="width=device-width,initial-scale=1">
+    <!-- Libraries Stylesheet -->
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'tudo', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'fonts', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body class="bg-gradient-primary">
+    <%= render "layouts/flash_messages"%>
+    <%= yield %>
+
+    <%= javascript_include_tag 'jq', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'bootstrap', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'admin', 'data-turbolinks-track': 'reload' %>
+  </body>
+</html>

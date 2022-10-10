@@ -1,5 +1,7 @@
 class LecturesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_lecture, only: %i[ destroy ]
+
 
   # GET /lectures or /lectures.json
   def index

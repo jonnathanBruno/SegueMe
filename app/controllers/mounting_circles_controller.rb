@@ -1,4 +1,5 @@
 class MountingCirclesController < ApplicationController
+    before_action :authenticate_user!
     before_action :set_mounting_circle, only: %i[destroy]
 
     def index

@@ -1,4 +1,6 @@
 class MountingsController < ApplicationController
+    before_action :authenticate_user!
+    
     def index
         @mountings = Mounting.all
         @participants = Participant.all

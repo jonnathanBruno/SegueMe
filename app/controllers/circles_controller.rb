@@ -1,4 +1,5 @@
 class CirclesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_circle, only: %i[ destroy ]
 
   # GET /circles or /circles.json

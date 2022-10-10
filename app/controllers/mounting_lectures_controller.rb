@@ -1,4 +1,5 @@
 class MountingLecturesController < ApplicationController
+    before_action :authenticate_user!
     before_action :set_mounting_lecture, only: %i[destroy]
 
     def index

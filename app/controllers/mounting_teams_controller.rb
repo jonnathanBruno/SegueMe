@@ -1,4 +1,5 @@
 class MountingTeamsController < ApplicationController
+    before_action :authenticate_user!
     before_action :set_mounting_teams, only: %i[destroy]
 
     def index

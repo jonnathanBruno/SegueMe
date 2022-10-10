@@ -1,4 +1,5 @@
 class FollowersController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_follower, only: %i[ show edit update destroy ]
 
   # GET /followers or /followers.json
