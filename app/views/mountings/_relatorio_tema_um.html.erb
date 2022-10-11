@@ -1,0 +1,64 @@
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+        <tr>
+            <th colspan="12" class="show-quadrante" style="background-color: #fbfbfb;">TEMA: "AS DIMENSÕES DO SER HUMANO E SUA VOCAÇÃO" E "A VIDA EM FAMÍLIA"  </th>
+        </tr>
+         <tr>
+            <th colspan="12" class="show-quadrante">1. Como tem sido o comportamento do jovem na família?</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% circles.each do |c| %>
+            <% if existeCirculo?(c.id) %>
+                <tr>
+                    <td class="show-quadrante col-2" colspan="2"><%= c.color %> <span id="circulo11<%= c.color %>"</td>
+                    <td class="show-quadrante col-10" id="resposta11<%= c.color %>" colspan="10"></td>
+                </tr>
+            <% end %>
+        <% end %>
+    </tbody>
+</table>
+
+<p class="quebra-de-pagina"></p>
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+        <tr>
+            <th colspan="12" class="show-quadrante" style="background-color: #fbfbfb;">TEMA: "AS DIMENSÕES DO SER HUMANO E SUA VOCAÇÃO" E "A VIDA EM FAMÍLIA"  </th>
+        </tr>
+         <tr>
+            <th colspan="12" class="show-quadrante">2. Quais os fatores que interferem negativamente no relacionamento familiar e o que você pode fazer para melhorar? </th>
+        </tr>
+    </thead>
+    <tbody>
+        <% circles.each do |c| %>
+            <% if existeCirculo?(c.id) %>
+                <tr>
+                    <td class="show-quadrante col-2" colspan="2"><%= c.color %> <span id="circulo12<%= c.color %>"</td>
+                    <td class="show-quadrante col-10" id="resposta12<%= c.color %>" colspan="10"></td>
+                </tr>
+            <% end %>
+        <% end %>
+    </tbody>
+</table>
+
+<p class="quebra-de-pagina"></p>
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+        <tr>
+            <th colspan="12" class="show-quadrante" style="background-color: #fbfbfb;">TEMA: "AS DIMENSÕES DO SER HUMANO E SUA VOCAÇÃO" E "A VIDA EM FAMÍLIA"  </th>
+        </tr>
+         <tr>
+            <th colspan="12" class="show-quadrante">3. O ser humano deve crescer e amadurecer física e intelectualmente, emocional e espiritualmente para viver em harmonia consigo, com a comunidade e com Deus. Quais as dificuldades que você encontra para esse crescimento? </th>
+        </tr>
+    </thead>
+    <tbody>
+        <% circles.each do |c| %>
+            <% if existeCirculo?(c.id) %>
+                <tr>
+                    <td class="show-quadrante col-2" colspan="2"><%= c.color %> <span id="circulo13<%= c.color %>"></td>
+                    <td class="show-quadrante col-10" id="resposta13<%= c.color %>" colspan="10"></td>
+                </tr>
+            <% end %>
+        <% end %>
+    </tbody>
+</table>
