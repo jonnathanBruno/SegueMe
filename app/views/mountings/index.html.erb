@@ -20,6 +20,11 @@
     <p class="quebra-de-pagina"></p>
 <% end %>
 
+<h1 class="quebra-de-pagina"> Relatório de Perguntas de Círculos </h1>
+<%= render "relatorio_circulo", circles: @circles %>
+<p class="quebra-de-pagina"></p>
+
+
 <!-- Renderizar equipes e equipistas -->
 <h1 class="quebra-de-pagina">Relação de Equipes</h1>
 <% @teams.each do |team| %>

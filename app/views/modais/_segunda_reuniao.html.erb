@@ -34,10 +34,10 @@
                                                         <div class="accordion-body">
                                                             <div class="row">
                                                                 <div class="col-md-12">
-                                                                    <input type="text" class="form-control" id="nomeCirculo<%= circle.color %>" aria-describedby="nomeCirculo">
+                                                                    <input type="text" class="form-control" id="temaDoisPerguntaUmCirculo<%= circle.color %>" aria-describedby="nomeCirculo">
                                                                 </div>
                                                             </div>
-                                                            <button class="btn btn-success mt-4" type="button" onClick="adicionarTituloCirculo('<%= circle.color %>')"> Cadastrar Nome </button>
+                                                            <button class="btn btn-success mt-4" type="button" data-dismiss="modal" onClick="cadastrarRespostas('<%= circle.color %>','Dois','Um')"> Cadastrar Resposta </button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -53,7 +53,7 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="flush-headingOne">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#segunda" aria-expanded="false" aria-controls="flush-collapseOne">
-                                 <h6 class="h6 text-gray-700 text-justify me-4">2. Reconciliação implica mudar de vida. Será que estamos dispostos a mudar mesmo? </h6>
+                                 <h6 class="h6 text-gray-700 text-justify me-4">2. Reconciliação implica mudar de vida. Será que estamos dispostos a mudar mesmo?  </h6>
                             </button>
                             </h2>
                             <div id="segunda" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
@@ -71,10 +71,10 @@
                                                         <div class="accordion-body">
                                                             <div class="row">
                                                                 <div class="col-md-12">
-                                                                    <input type="text" class="form-control" id="nomeCirculo<%= circle.color %>" aria-describedby="nomeCirculo">
+                                                                    <input type="text" class="form-control" id="temaDoisPerguntaDoisCirculo<%= circle.color %>" aria-describedby="nomeCirculo">
                                                                 </div>
                                                             </div>
-                                                            <button class="btn btn-success mt-4" type="button" onClick="adicionarTituloCirculo('<%= circle.color %>')"> Cadastrar Nome </button>
+                                                            <button class="btn btn-success mt-4" type="button" data-dismiss="modal" onClick="cadastrarRespostas('<%= circle.color %>','Dois','Dois')"> Cadastrar Resposta </button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -84,7 +84,7 @@
                                 </div>
                             </div>
                         </div> 
-                    </div>     
+                    </div>                              
                 </div>          
             </div>
             <div class="modal-footer">

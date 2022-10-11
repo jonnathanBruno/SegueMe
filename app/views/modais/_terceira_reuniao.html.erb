@@ -11,12 +11,12 @@
             <div class="modal-body">
 
                <div class="card-body">
-                    <h3 class="h3 text-gray-800">CONHECENDO A CEIA EUCARÍSTICA E UM HOMEM CHAMADO JESUS</h3>
+                    <h3 class="h3 text-gray-800">CONHECENDO A CEIA EUCARÍSTICA E UM HOMEM CHAMADO JESUS </h3>
                     <div class="accordion accordion-flush" id="accordionFlushExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="flush-headingOne">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#primeira" aria-expanded="false" aria-controls="flush-collapseOne">
-                                 <h6 class="h6 text-gray-700 text-justify me-4">1. Alguma vez você já sentiu a presença de Jesus em sua vida? Quando? </h6>
+                                 <h6 class="h6 text-gray-700 text-justify me-4">1. Alguma vez você já sentiu a presença de Jesus em sua vida? Quando?</h6>
                             </button>
                             </h2>
                             <div id="primeira" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
@@ -34,10 +34,10 @@
                                                         <div class="accordion-body">
                                                             <div class="row">
                                                                 <div class="col-md-12">
-                                                                    <input type="text" class="form-control" id="nomeCirculo<%= circle.color %>" aria-describedby="nomeCirculo">
+                                                                    <input type="text" class="form-control" id="temaTresPerguntaUmCirculo<%= circle.color %>" aria-describedby="nomeCirculo">
                                                                 </div>
                                                             </div>
-                                                            <button class="btn btn-success mt-4" type="button" onClick="adicionarTituloCirculo('<%= circle.color %>')"> Cadastrar Nome </button>
+                                                            <button class="btn btn-success mt-4" type="button" data-dismiss="modal" onClick="cadastrarRespostas('<%= circle.color %>','Tres','Um')"> Cadastrar Resposta </button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -71,10 +71,10 @@
                                                         <div class="accordion-body">
                                                             <div class="row">
                                                                 <div class="col-md-12">
-                                                                    <input type="text" class="form-control" id="nomeCirculo<%= circle.color %>" aria-describedby="nomeCirculo">
+                                                                    <input type="text" class="form-control" id="temaTresPerguntaDoisCirculo<%= circle.color %>" aria-describedby="nomeCirculo">
                                                                 </div>
                                                             </div>
-                                                            <button class="btn btn-success mt-4" type="button" onClick="adicionarTituloCirculo('<%= circle.color %>')"> Cadastrar Nome </button>
+                                                            <button class="btn btn-success mt-4" type="button" data-dismiss="modal" onClick="cadastrarRespostas('<%= circle.color %>','Tres','Dois')"> Cadastrar Resposta </button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -90,7 +90,7 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="flush-headingOne">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#terceira" aria-expanded="false" aria-controls="flush-collapseOne">
-                                 <h6 class="h6 text-gray-700 text-justify me-4">3. Na celebração eucarística nós devemos participar e não apenas estar presentes. Como tem sido a sua participação? </h6>
+                                 <h6 class="h6 text-gray-700 text-justify me-4">3. Na celebração eucarística nós devemos participar e não apenas estar presentes. Como tem sido a sua participação?  </h6>
                             </button>
                             </h2>
                             <div id="terceira" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
@@ -108,10 +108,10 @@
                                                         <div class="accordion-body">
                                                             <div class="row">
                                                                 <div class="col-md-12">
-                                                                    <input type="text" class="form-control" id="nomeCirculo<%= circle.color %>" aria-describedby="nomeCirculo">
+                                                                    <input type="text" class="form-control" id="temaTresPerguntaTresCirculo<%= circle.color %>" aria-describedby="nomeCirculo">
                                                                 </div>
                                                             </div>
-                                                            <button class="btn btn-success mt-4" type="button" onClick="adicionarTituloCirculo('<%= circle.color %>')"> Cadastrar Nome </button>
+                                                            <button class="btn btn-success mt-4" type="button" data-dismiss="modal" onClick="cadastrarRespostas('<%= circle.color %>','Tres','Tres')"> Cadastrar Resposta </button>
                                                         </div>
                                                     </div>
                                                 </div>

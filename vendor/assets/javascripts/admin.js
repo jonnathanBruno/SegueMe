@@ -140,7 +140,34 @@ function adicionarTituloCirculo(cor) {
         } 
     }
     if(adicionado == false) circulos.push({"cor":cor,"titulo":nomecirculo});
-    localStorage.setItem("circulos",  JSON.stringify(circulos));    
+    localStorage.setItem("circulos",  JSON.stringify(circulos)); 
+
+    document.getElementById('alertaQuadrante').style.visibility = 'Visible';
+    setTimeout(zerando, 2000);   
+}
+
+function cadastrarRespostas(cor, tema, pergunta) { 
+    var adicionado = false;
+    var resposta = JSON.parse(localStorage.getItem("tema"+tema+"Pergunta"+pergunta) || "[]");
+    var respostaCirculo =  document.getElementById("tema"+tema+"Pergunta"+pergunta+"Circulo"+cor).value;
+
+    for(var i=0; i< resposta.length; i++){
+        if(resposta[i].cor == cor){
+            resposta[i].resposta = respostaCirculo;
+            resposta[i].cor = cor;
+            adicionado = true;
+            break;
+        } 
+    }
+    if(adicionado == false)
+        resposta.push(
+        {
+         "resposta" : respostaCirculo,
+         "cor": cor
+        });
+    localStorage.setItem("tema"+tema+"Pergunta"+pergunta,  JSON.stringify(resposta));   
+    document.getElementById('alertaQuadrante').style.visibility = 'Visible';
+    setTimeout(zerando, 2000);    
 }
 
 
