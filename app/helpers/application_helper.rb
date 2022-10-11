@@ -26,4 +26,9 @@ module ApplicationHelper
     def maiuscula(texto)
         texto.upcase
     end
+
+    def existeCirculo?(id)
+        @existeCirculo = Mounting.buscar_existe_circulo(id)
+        @existeCirculo.present?
+    end
 end

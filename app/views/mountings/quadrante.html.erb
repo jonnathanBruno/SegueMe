@@ -22,9 +22,10 @@
               <div class="card-body">
                 <h3 class="card-title">Círculos</h3>
                 <p class="card-text">Configure o nome dos círculos, relatório de perguntas de círculo e muito mais.</p>
-                <button type="button" data-toggle="modal" data-target="#modalTitulo" class="btn btn-primary">1º reunião</button>
-                <button type="button" data-toggle="modal" data-target="#modalPos" class="btn btn-primary">2º reunião</button>
-                <button type="button" data-toggle="modal" data-target="#modalPadroeiro" class="btn btn-primary">3º reunião</button>
+                <button type="button" data-toggle="modal" data-target="#modalNomeCirculos" class="btn btn-primary">Nome Circulos</button>
+                <button type="button" data-toggle="modal" data-target="#modalPrimeiraReuniao" class="btn btn-primary">1º reunião</button>
+                <button type="button" data-toggle="modal" data-target="#modalSegundaReuniao" class="btn btn-primary">2º reunião</button>
+                <button type="button" data-toggle="modal" data-target="#modalTerceiraReuniao" class="btn btn-primary">3º reunião</button>
               </div>
             </div>
           </div>
@@ -38,3 +39,8 @@
 <%= render "modais/modal_titulo" %>
 <%= render "modais/modal_pos" %>
 <%= render "modais/modal_padroeiro" %>
+
+<%= render "modais/nome_circulos", circles: $circles %>
+<%= render "modais/primeira_reuniao", circles: $circles %>
+<%= render "modais/segunda_reuniao", circles: $circles %>
+<%= render "modais/terceira_reuniao", circles: $circles %>

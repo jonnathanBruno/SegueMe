@@ -1,0 +1,43 @@
+<div class="modal fade" id="modalNomeCirculos" tabindex="-1" role="dialog" aria-labelledby="modalNomeCirculos"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cadastrar Nome dos Círculos</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+               <div class="card-body">
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <% circles.each do |circle|%>
+                        <% if existeCirculo?(circle.id)%>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#<%= circle.color%>" aria-expanded="false" aria-controls="flush-collapseOne">
+                                    <span class="show"><%= circle.color%></span>
+                                </button>
+                                </h2>
+                                <div id="<%= circle.color %>" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <input type="text" class="form-control" id="nomeCirculo<%= circle.color %>" aria-describedby="nomeCirculo">
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-success mt-4" type="button" onClick="adicionarTituloCirculo('<%= circle.color %>')"> Cadastrar Nome </button>
+                                    </div>
+                                </div>
+                            </div>
+                        <% end %>
+                    <% end %>
+                </div>       
+              </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

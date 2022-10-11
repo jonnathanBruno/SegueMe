@@ -1,3 +1,4 @@
 class ApplicationController < ActionController::Base
-    $pesquisaSeguidores = Follower.all;  
+    $pesquisaSeguidores = Follower.all;
+    $circles = Circle.all;  
 end
