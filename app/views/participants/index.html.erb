@@ -23,7 +23,7 @@
                         <tr>
                             <td class="show"><%= participant.name %> </td>
                             <td class="show"><%= participant.surname %> </td>
-                            <td class="show"><%= participant.contact %></td>
+                            <td class="show"><%= "--" if !participant.contact.present? %><%= participant.contact %></td>
                             <td class="show"><%= mes_dia_ano(participant.birth) %></td>
                             <td>
                                 <%= link_to participant,  class:"btn btn-warning", style: "margin-bottom: 2px;" do %>

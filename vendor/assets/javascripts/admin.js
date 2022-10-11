@@ -14,9 +14,11 @@ $( "#participant_contact" ).keypress(function() {
     $(this).mask('(00) 90000-0000');
 });
 
-var dataSeguidor = JSON.parse(document.getElementById("search").name);
-var dataSeguimista = JSON.parse(document.getElementById("search").accept);
-var data = dataSeguidor.concat(dataSeguimista); 
+
+/*!
+ * search seguimista
+ */
+var data =JSON.parse(document.getElementById("search").name);
 
 var options = {
     getValue: "name",

@@ -141,8 +141,9 @@
 
                 <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                     <div class="input-group">
-                        <input type="text" id="search" style="box-shadow: 0px 0px #888888" name="<%= $pesquisaSeguidores.to_json %>" accept="<%= $pesquisaSeguimistas.to_json%>" class="form-control bg-light border-0 small" placeholder="Pesquisar por encontrista..."
-                            aria-label="Search" aria-describedby="basic-addon2">
+                        <input type="text" id="search" style="box-shadow: 0px 0px #888888; width: 350px;"  
+                               name="<%= $pesquisaSeguidores.to_json %>" class="form-control bg-light border-0 small" placeholder="Pesquisar por seguimista..."
+                               aria-label="Search" aria-describedby="basic-addon2">
                         <div class="input-group-append">
                             <button class="btn btn-primary" type="button" onClick="pesquisar()">
                                 <i class="fa-solid fa-magnifying-glass"></i>

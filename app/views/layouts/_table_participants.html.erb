@@ -1,16 +1,16 @@
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
         <tr>
-            <th class="show-quadrante text-center" scope="col-6">Nome Completo <br> Endereço </th>
-            <th class="show-quadrante text-center" scope="col-2">Apelido <br> Email</th>
-            <th class="show-quadrante text-center" scope="col-2">Nascimento <br> Contato</th>
+            <th class="show-quadrante text-center" scope="col-6">NOME COMPLETO <br> ENDEREÇO </th>
+            <th class="show-quadrante text-center" scope="col-2">APELIDO <br> EMAIL </th>
+            <th class="show-quadrante text-center" scope="col-2">NASCIMENTO <br> CONTATO </th>
         </tr>
     </thead>
     <tbody>
         <% participants.each do |p| %>
             <tr style="background-color: #fbfbfb;">
                 <td class="show-quadrante text-center"><%= maiuscula(p.name) %></td>
-                <td class="show-quadrante text-center"><%= "--" if !p.surname.present? %><%= maiuscula(p.surname) %></td>
+                <td class="show-quadrante text-center fw-bolder"><%= "--" if !p.surname.present? %><%= maiuscula(p.surname) %></td>
                 <td class="show-quadrante text-center"><%= maiuscula(mes_dia_ano_completo(p.birth)) %></td>
             </tr>
                 <tr>
