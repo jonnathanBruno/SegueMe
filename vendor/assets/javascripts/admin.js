@@ -14,6 +14,32 @@ $( "#participant_contact" ).keypress(function() {
     $(this).mask('(00) 90000-0000');
 });
 
+var dataSeguidor = JSON.parse(document.getElementById("search").name);
+var dataSeguimista = JSON.parse(document.getElementById("search").accept);
+var data = dataSeguidor.concat(dataSeguimista); 
+
+var options = {
+    getValue: "name",
+	data: data,
+    cssClasses: "form-control bg-light border-0 small",
+
+	list: {
+
+        match: {
+			enabled: true
+		}
+        ,
+		onSelectItemEvent: function() {
+			var value = $("#search").getSelectedItemData().id;
+            localStorage.setItem("valorID", value)
+		}
+	}
+};
+$("#search").easyAutocomplete(options);
+
+ function pesquisar(){
+    window.location="/followers/" + localStorage.getItem('valorID');  
+ }
 
 
 var follower = document.getElementById('mounting_follower_id')
