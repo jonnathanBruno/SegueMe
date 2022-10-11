@@ -88,26 +88,43 @@ var funcao = document.getElementById('mounting_occupation');
         });
     }
     
-function gerarQuadrante() {
+
+function adicionarPadroeiro() {
+    var padroeiro = localStorage.getItem('padroeiro');
+    localStorage.setItem("padroeiro", document.getElementById('padroeiro').value.toUpperCase());
+
+    var padroeiroHistoria = localStorage.getItem('padroeiroHistoria');
+    localStorage.setItem("padroeiroHistoria", document.getElementById('padroeiroHistoria').value);
+    document.getElementById('alertaQuadrante').style.visibility = 'Visible';
+    setTimeout(zerando, 2000);
+}
+
+function adicionarPos() {
+    var dataPos = localStorage.getItem('dataPos');
+    localStorage.setItem("dataPos", document.getElementById('dataPos').value);
+    document.getElementById('alertaQuadrante').style.visibility = 'Visible';
+    setTimeout(zerando, 2000);
+}
+
+function adicionarTitulo() {
     var titulo = localStorage.getItem('titulo');
     localStorage.setItem("titulo", document.getElementById('titulo').value.toUpperCase());
 
     var dataEncontro = localStorage.getItem('dataEncontro');
     localStorage.setItem("dataEncontro", document.getElementById('dataEncontro').value.toUpperCase());
 
-    var dataPos = localStorage.getItem('dataPos');
-    localStorage.setItem("dataPos", document.getElementById('dataPos').value);
+    document.getElementById('alertaQuadrante').style.visibility = 'Visible';
+    setTimeout(zerando, 2000);
+}
 
-    var padroeiro = localStorage.getItem('padroeiro');
-    localStorage.setItem("padroeiro", document.getElementById('padroeiro').value.toUpperCase());
-
-    var padroeiroHistoria = localStorage.getItem('padroeiroHistoria');
-    localStorage.setItem("padroeiroHistoria", document.getElementById('padroeiroHistoria').value);
-    
+function gerarQuadrante() {  
     window.location="/mountings";   
 }
 
-function gerarQuadranteSemConfigurar() {  
-    window.location="/mountings";   
+function zerando() { 
+    document.getElementById('alertaQuadrante').style.visibility = 'hidden';
 }
+
+
+
 !function(l){"use strict";l("#sidebarToggle, #sidebarToggleTop").on("click",function(e){l("body").toggleClass("sidebar-toggled"),l(".sidebar").toggleClass("toggled"),l(".sidebar").hasClass("toggled")&&l(".sidebar .collapse").collapse("hide")}),l(window).resize(function(){l(window).width()<768&&l(".sidebar .collapse").collapse("hide"),l(window).width()<480&&!l(".sidebar").hasClass("toggled")&&(l("body").addClass("sidebar-toggled"),l(".sidebar").addClass("toggled"),l(".sidebar .collapse").collapse("hide"))}),l("body.fixed-nav .sidebar").on("mousewheel DOMMouseScroll wheel",function(e){var o;768<l(window).width()&&(o=(o=e.originalEvent).wheelDelta||-o.detail,this.scrollTop+=30*(o<0?1:-1),e.preventDefault())}),l(document).on("scroll",function(){100<l(this).scrollTop()?l(".scroll-to-top").fadeIn():l(".scroll-to-top").fadeOut()}),l(document).on("click","a.scroll-to-top",function(e){var o=l(this);l("html, body").stop().animate({scrollTop:l(o.attr("href")).offset().top},1e3,"easeInOutExpo"),e.preventDefault()})}(jQuery);

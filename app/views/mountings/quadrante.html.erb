@@ -1,39 +1,40 @@
 <div class="container-fluid">
-  <h1 class="h3 mb-2 text-gray-800"> Configurar Capa Quadrante </h1>
-    <div class="card shadow mb-4">
+  <h1 class="h3 mb-4 text-gray-800"> Configurar Quadrante </h1>
+    <div class="card shadow">
       <div class="card-body">
-
-        <div class="row mt-4">
-          <div class="col-md-6">
-            <label class="form-label">Título do Encontro </label>
-            <input type="text" class="form-control" id="titulo" aria-describedby="Titulo">
-          </div>
-          <div class="col-md-6">
-            <label class="form-label">Data do Encontro</label>
-            <input type="text" class="form-control" id="dataEncontro" aria-describedby="Data Encontro">
-          </div>
+        <div id="alertaQuadrante" class="alert alert-success" style="visibility:hidden" role="alert">
+          Configurado com sucesso!
         </div>
-        <div class="row mt-4">
-          <div class="col-md-6">
-            <label class="form-label">Data, Hora e Local do Pós de Avaliação</label>
-            <input type="text" class="form-control" id="dataPos" aria-describedby="Data Pós">
-          </div>
-            <div class="col-md-6">
-              <label class="form-label">Padroeiro do Encontro</label>
-              <input type="text" class="form-control" id="padroeiro" aria-describedby="Padroeiro">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">Capa</h3>
+                <p class="card-text">Configure a data do encontro, data, hora e local do pós de avaliação, história do padroeiro e muito mais.</p>
+                <button type="button" data-toggle="modal" data-target="#modalTitulo" class="btn btn-primary">Título Encontro</button>
+                <button type="button" data-toggle="modal" data-target="#modalPos" class="btn btn-primary">Data Pós-Avaliação</button>
+                <button type="button" data-toggle="modal" data-target="#modalPadroeiro" class="btn btn-primary">Padroeiro Encontro</button>
+              </div>
             </div>
-        </div>
-        
-        <div class="row mt-4">
-            <div class="col-md-12">
-              <label class="form-label">História do Padroeiro</label>
-              <textarea class="form-control" id="padroeiroHistoria" aria-describedby="Padroeiro História"  rows="3"></textarea>
+          </div>
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">Círculos</h3>
+                <p class="card-text">Configure o nome dos círculos, relatório de perguntas de círculo e muito mais.</p>
+                <button type="button" data-toggle="modal" data-target="#modalTitulo" class="btn btn-primary">1º reunião</button>
+                <button type="button" data-toggle="modal" data-target="#modalPos" class="btn btn-primary">2º reunião</button>
+                <button type="button" data-toggle="modal" data-target="#modalPadroeiro" class="btn btn-primary">3º reunião</button>
+              </div>
             </div>
+          </div>
         </div>
-
-         <button class="btn btn-primary mt-3" onClick="gerarQuadrante()">Gerar Quadrante Configurado </button>
-         <button class="btn btn-secondary mt-3" onClick="gerarQuadranteSemConfigurar()">Gerar Quadrante SEM Configurar </button>
+        <button class="btn btn-success mt-5" onClick="gerarQuadrante()">Gerar Quadrante</button>
       </div>
     </div>
   </div>
 </div>
+
+<%= render "modais/modal_titulo" %>
+<%= render "modais/modal_pos" %>
+<%= render "modais/modal_padroeiro" %>

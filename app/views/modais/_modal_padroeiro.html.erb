@@ -1,0 +1,34 @@
+
+<div class="modal fade" id="modalPadroeiro" tabindex="-1" role="dialog" aria-labelledby="modalPadroeiro"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Configurar Padroeiro</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <label class="form-label">Padroeiro do Encontro</label>
+                    <input type="text" class="form-control" id="padroeiro" aria-describedby="Padroeiro">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <label class="form-label">História do Padroeiro</label>
+                    <textarea class="form-control" id="padroeiroHistoria" aria-describedby="Padroeiro História"  rows="3"></textarea>
+                  </div>
+                </div>          
+              </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" data-dismiss="modal" onClick="adicionarPadroeiro()"> Adicionar Padroeiro </button>
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
