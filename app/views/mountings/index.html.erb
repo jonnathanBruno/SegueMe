@@ -8,12 +8,12 @@
 <p class="quebra-de-pagina"></p>
 
 <!-- Renderizar relação de seguimistas -->
-<h1 style="text-align:center">Relação dos Seguimistas</h1>
+<h1 style="text-align:center">RELAÇÃO DE SEGUIMISTAS</h1>
 <br>
 <%= render "layouts/table_participants", participants: @participants %>
 
 
-<h1 class="quebra-de-pagina"> Relação de Círculos </h1>
+<h1 class="quebra-de-pagina"> RELAÇÃO DE CÍRCULOS </h1>
 <% @circles.each do |circle| %>
     <h1 class="h3 mb-2 text-gray-800"><%= "Círculo " + circle.color if existeCirculo?(circle.id) %></h1>
         <%= render "layouts/table_circles", circle: circle, funcao: "Seguimista" if existeCirculo?(circle.id)%>
@@ -29,7 +29,7 @@
 
 
 <!-- Renderizar equipes e equipistas -->
-<h1 class="quebra-de-pagina">Relação de Equipes</h1>
+<h1 class="quebra-de-pagina">RELAÇÃO DE EQUIPES</h1>
 <% @teams.each do |team| %>
     <h1 class="h3 mb-2 text-gray-800"><%= team.name %></h1>
         <%= render "layouts/table_followers", team: team, funcao: "Jovem Coordenador" if existeFuncao?(team.id, "Jovem Coordenador")%>
@@ -41,7 +41,7 @@
     <p class="quebra-de-pagina"></p>
 <% end %>
 
-<h1 class="quebra-de-pagina">Equipe Dirigente</h1>
+<h1 class="quebra-de-pagina">EQUIPE DIRIGENTE</h1>
 <% @teamsManager.each do |team| %>
     <h1 class="h3 mb-2 text-gray-800"><%= team.name %></h1>
         <%= render "layouts/table_followers", team: team, funcao: "Jovem Coordenador" if existeFuncao?(team.id, "Jovem Coordenador")%>
@@ -50,8 +50,10 @@
         <%= render "layouts/table_followers", team: team, funcao: "Jovem Apoio" if existeFuncao?(team.id, "Jovem Apoio")%>
         <%= render "layouts/table_followers", team: team, funcao: "Casal Equipista" if existeFuncao?(team.id, "Casal Equipista")%>
         <%= render "layouts/table_followers", team: team, funcao: "Jovem Equipista" if existeFuncao?(team.id, "Jovem Equipista")%>
+        <%= render "layouts/table_followers", team: team, funcao: "Dirigente Espiritual" if existeFuncao?(team.id, "Dirigente Espiritual")%>
 <% end %>
 
 <!-- Renderizar palestrantes -->
-<h1 class="quebra-de-pagina">Palestrantes</h1>
+<h1 class="quebra-de-pagina" id="tituloEncontroPalestra"></h1>
+<h1 class="text-center">PALESTRANTES</h1>
 <%= render "layouts/table_speakers", palestras: @palestras %>

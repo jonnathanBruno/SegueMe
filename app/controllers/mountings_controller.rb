@@ -3,7 +3,7 @@ class MountingsController < ApplicationController
     
     def index
         @mountings = Mounting.all
-        @participants = Participant.all
+        @participants = Participant.all.order(:name)
         @palestras = Lecture.all
         @teams = Team.nao_dirigentes
         @teamsManager = Team.dirigentes

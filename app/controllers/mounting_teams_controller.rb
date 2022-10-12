@@ -3,14 +3,14 @@ class MountingTeamsController < ApplicationController
     before_action :set_mounting_teams, only: %i[destroy]
 
     def index
-        @teams = Team.all
+        @teams = Team.all.order(:name)
     end
 
     def new
         @mounting = Mounting.new
-        @jaSalvo = Mounting.condicao_montagem("follower_id")
+        @jaSalvo = Mounting.condicao_montagem("follower_id", "team_id")
         jaSalvo_ids = @jaSalvo.pluck(:follower_id).join(",")
-        @followers = Follower.sem_inseridos(jaSalvo_ids)
+        @followers = Follower.sem_inseridos(jaSalvo_ids).order(:name)
     end 
 
     def create

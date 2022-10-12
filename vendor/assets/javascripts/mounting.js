@@ -1,5 +1,6 @@
 var titulo = localStorage.getItem('titulo');
 document.getElementById('tituloCapa').innerHTML = titulo 
+document.getElementById('tituloEncontroPalestra').innerHTML = titulo 
 
 var data = localStorage.getItem('dataEncontro');
 document.getElementById('dataCapa').innerHTML = data 

@@ -5,12 +5,12 @@
         <%= simple_form_for @mounting, url: mounting_teams_path do |f| %>
             <div class="row">
                 <div class="col-md-12">
-                    <%= f.association :team, label_method: :name, :include_blank => "Selecione a equipe",value_method: :id, label: "Equipe"%>
+                    <%= f.association :team, collection: Team.order('name') ,label_method: :name, :include_blank => "Selecione a equipe",value_method: :id, label: "Equipe"%>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-8">
-                    <%= f.input :occupation, as: :select, collection: ["Jovem Equipista", "Jovem Apoio", "Jovem Coordenador", "Casal Equipista", "Casal Apoio", "Casal Coordenador"], label: "Função na Equipe", selected: "Jovem Equipista" %>
+                    <%= f.input :occupation, as: :select, collection: ["Jovem Equipista", "Jovem Apoio", "Jovem Coordenador", "Casal Equipista", "Casal Apoio", "Casal Coordenador", "Dirigente Espiritual"], label: "Função na Equipe", selected: "Jovem Equipista" %>
                 </div>
                 <div class="col-md-4">
                     <%= f.input :year, label: "Ano do Encontro", order: [:year] %>

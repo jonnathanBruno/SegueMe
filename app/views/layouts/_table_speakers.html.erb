@@ -1,25 +1,25 @@
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
         <tr>
-            <th class="show-quadrante" scope="col-4">Tema</th>
-            <th class="show-quadrante" scope="col-3">Data/Horário</th>
-            <th class="show-quadrante" scope="col-3">Palestrante</th>
-            <th class="show-quadrante" scope="col-2">Contato</th>
+            <th class="show-quadrante" scope="col-3">TEMA</th>
+            <th class="show-quadrante" scope="col-2">DATA/HORÁRIO</th>
+            <th class="show-quadrante" scope="col-4">PALESTRANTE</th>
+            <th class="show-quadrante" scope="col-3">CONTATO</th>
         </tr>
     </thead>
     <tbody>
         <% palestras.each do |mc| %>
             <tr>
-                <td class="show-quadrante"><%= maiuscula(mc.name) %></td>
-                <td class="show-quadrante"><%= maiuscula(mes_dia_ano_completo(mc.date_lecture)) %><br><%= hora_minuto(mc.time_lecture)%></td>
+                <td class="show-quadrante fw-bolder col-3"><%= maiuscula(mc.name) %></td>
+                <td class="show-quadrante col-2"><%= maiuscula(mes_dia_ano_completo(mc.date_lecture)) %><br><%= hora_minuto(mc.time_lecture)%></td>
 
                 <% montagemPalestras(mc.id) %>
-                <td class="show-quadrante">
+                <td class="show-quadrante fw-bolder col-4">
                     <% @mountingLectures.each do |mc| %>
-                        <%= maiuscula(mc.speaker.name) %> <br>
+                        <%= maiuscula(mc.speaker.name)%> <br>
                     <% end %>
                 </td>
-                <td class="show-quadrante">
+                <td class="show-quadrante col-3">
                     <% @mountingLectures.each do |mc| %>
                         <%= mc.speaker.contact %> <br>
                     <% end %>

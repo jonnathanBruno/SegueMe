@@ -8,13 +8,13 @@ class MountingCirclesController < ApplicationController
 
     def new
         @mounting = Mounting.new
-        @jaSalvo = Mounting.condicao_montagem("participant_id")
-        jaSalvo_ids = @jaSalvo.pluck(:participant_id).join(",")
-        @participants = Participant.sem_inseridos(jaSalvo_ids)
+        jaSalvo = Mounting.condicao_montagem("participant_id","circle_id")
+        jaSalvo_ids = jaSalvo.pluck(:participant_id).join(",")
+        @participants = Participant.sem_inseridos(jaSalvo_ids).order(:name)
 
-        @jaSalvo = Mounting.condicao_montagem("follower_id")
-        jaSalvo_ids = @jaSalvo.pluck(:follower_id).join(",")
-        @followers = Follower.sem_inseridos(jaSalvo_ids)
+        jaSalvo = Mounting.condicao_montagem("follower_id","circle_id")
+        jaSalvo_ids = jaSalvo.pluck(:follower_id).join(",")
+        @followers = Follower.sem_inseridos(jaSalvo_ids).order(:name)
     end 
 
     def create
