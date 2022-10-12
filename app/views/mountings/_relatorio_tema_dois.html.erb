@@ -1,0 +1,44 @@
+<table class="table table-bordered mt-5" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+        <tr>
+            <th colspan="12" class="tema">TEMA: UMA PROPOSTA DE PAZ</th>
+        </tr>
+         <tr>
+            <th colspan="12" class="tema-pergunta">1. Cristo veio ao mundo para perdoar e reconciliar e deu essa missão à sua igreja por meio do sacramento da Penitência. Por que o medo ou receio de utilizar este meio para se reconciliar com Deus? </th>
+        </tr>
+    </thead>
+    <tbody>
+        <% circles.each do |c| %>
+            <% if existeCirculo?(c.id) %>
+                <tr>
+                    <td class="show-quadrante col-2 text-uppercase" style="font-weight: 700;" colspan="2">CÍRCULO <%= c.color %> </br> <span id="circulo21<%= c.color %>"</td>
+                    <td class="show-quadrante col-10 td-respostas" id="resposta21<%= c.color %>" colspan="10"></td>
+                </tr>
+            <% end %>
+        <% end %>
+    </tbody>
+</table>
+
+<p class="quebra-de-pagina"></p>
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+        <tr>
+            <th colspan="12" class="tema">TEMA: UMA PROPOSTA DE PAZ </th>
+        </tr>
+         <tr>
+            <th colspan="12" class="tema-pergunta">2. Reconciliação implica mudar de vida. Será que estamos dispostos a mudar mesmo?   </th>
+        </tr>
+    </thead>
+    <tbody>
+        <% circles.each do |c| %>
+            <% if existeCirculo?(c.id) %>
+                <tr>
+                    <td class="show-quadrante col-2 text-uppercase" style="font-weight: 700;" colspan="2">CÍRCULO <%= c.color %> </br> <span id="circulo22<%= c.color %>"</td>
+                    <td class="show-quadrante col-10 td-respostas" id="resposta22<%= c.color %>" colspan="10"></td>
+                </tr>
+            <% end %>
+        <% end %>
+    </tbody>
+</table>
+
+<p class="quebra-de-pagina"></p>

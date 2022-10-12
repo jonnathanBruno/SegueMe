@@ -68,6 +68,20 @@ td, th, p{
     font-size: 18px;
 }
 
+.td-respostas{
+    font-size: 18px !important;
+    text-align: justify;
+}
+
+.tema{
+    font-size: 20px;
+    background-color: #e2e1e1 !important;
+}
+
+.tema-pergunta{
+    font-size: 19px;
+}
+
 .vermelho{
     background-color: #d31313;
     color: white
@@ -120,6 +134,12 @@ capa-logo{
 .texto-convite{
     font-size: 22px;
     text-indent: 50px;
+}
+
+.texto-convite-local{
+    font-size: 24px;
+    text-indent: 50px;
+    font-weight: 700;
 }
 
 .show-quadrante{

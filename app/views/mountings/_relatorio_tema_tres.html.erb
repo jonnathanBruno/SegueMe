@@ -1,0 +1,64 @@
+<table class="table table-bordered mt-5" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+        <tr>
+            <th colspan="12" class="tema">TEMA: "CONHECENDO A CEIA EUCARÍSTICA" E "UM HOMEM CHAMADO JESUS"</th>
+        </tr>
+         <tr>
+            <th colspan="12" class="tema-pergunta">1. Alguma vez você já sentiu a presença de Jesus em sua vida? Quando?</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% circles.each do |c| %>
+            <% if existeCirculo?(c.id) %>
+                <tr>
+                    <td class="show-quadrante col-2 text-uppercase" style="font-weight: 700;" colspan="2">CÍRCULO <%= c.color %> </br> <span id="circulo31<%= c.color %>"</td>
+                    <td class="show-quadrante col-10 td-respostas" id="resposta31<%= c.color %>" colspan="10"></td>
+                </tr>
+            <% end %>
+        <% end %>
+    </tbody>
+</table>
+
+<p class="quebra-de-pagina"></p>
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+        <tr>
+            <th colspan="12" class="tema">TEMA: "CONHECENDO A CEIA EUCARÍSTICA" E "UM HOMEM CHAMADO JESUS"</th>
+        </tr>
+         <tr>
+            <th colspan="12" class="tema-pergunta">2. Segundo Santo Agostinho, o homem só ama o que conhece. Você está disposto a conhecer melhor a proposta de Cristo para decidir segui-lo? </th>
+        </tr>
+    </thead>
+    <tbody>
+        <% circles.each do |c| %>
+            <% if existeCirculo?(c.id) %>
+                <tr>
+                    <td class="show-quadrante col-2 text-uppercase" style="font-weight: 700;" colspan="2">CÍRCULO <%= c.color %> </br> <span id="circulo32<%= c.color %>"</td>
+                    <td class="show-quadrante col-10 td-respostas" id="resposta32<%= c.color %>" colspan="10"></td>
+                </tr>
+            <% end %>
+        <% end %>
+    </tbody>
+</table>
+
+<p class="quebra-de-pagina"></p>
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+        <tr>
+            <th colspan="12" class="tema">TEMA: "CONHECENDO A CEIA EUCARÍSTICA" E "UM HOMEM CHAMADO JESUS"</th>
+        </tr>
+         <tr>
+            <th colspan="12" class="tema-pergunta">3. Na celebração eucarística nós devemos participar e não apenas estar presentes. Como tem sido a sua participação?  </th>
+        </tr>
+    </thead>
+    <tbody>
+        <% circles.each do |c| %>
+            <% if existeCirculo?(c.id) %>
+                <tr>
+                    <td class="show-quadrante col-2 text-uppercase" style="font-weight: 700;" colspan="2">CÍRCULO <%= c.color %><br><span id="circulo33<%= c.color %>"></td>
+                    <td class="show-quadrante col-10 td-respostas" id="resposta33<%= c.color %>" colspan="10"></td>
+                </tr>
+            <% end %>
+        <% end %>
+    </tbody>
+</table>
