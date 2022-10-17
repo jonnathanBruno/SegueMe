@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get "/mountings/followers", to: "mountings#followers"
   get "/mountings/speakers", to: "mountings#speakers"
   get "/mountings/quadrante", to: "mountings#quadrante"
+  get "documents/download_pdf"
+  get "documents", to: "documents#index"
 
   resources :mountings, only: [:index, :followers, :speakers, :quadrante]
   devise_for :users
