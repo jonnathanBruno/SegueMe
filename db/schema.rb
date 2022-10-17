@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2022_10_10_141801) do
     t.integer "circle_id"
     t.integer "team_id"
     t.integer "lecture_id"
-    t.date "year"
+    t.string "year"
     t.string "occupation"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -68,13 +68,13 @@ ActiveRecord::Schema.define(version: 2022_10_10_141801) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
+    t.string "surname"
     t.string "email"
     t.date "birth"
     t.string "address"
     t.string "type_date"
     t.string "contact"
     t.integer "parish_id"
-    t.string "surname"
     t.index ["parish_id"], name: "index_participants_on_parish_id"
   end
 
@@ -94,9 +94,9 @@ ActiveRecord::Schema.define(version: 2022_10_10_141801) do
   create_table "teams", force: :cascade do |t|
     t.string "name"
     t.integer "qnt"
+    t.boolean "manager"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "manager"
   end
 
   create_table "users", force: :cascade do |t|

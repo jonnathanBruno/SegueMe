@@ -8,10 +8,10 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                        <th class="col-7">Título Palestra</th>
+                        <th class="col-6">Título Palestra</th>
                         <th class="col-2">Data</th>
                         <th class="col-2">Horário</th>
-                        <th colspan="1"></th>
+                        <th colspan="2"></th>
                         </tr>
                     </thead>
                     <tfoot>
@@ -22,6 +22,9 @@
                             <td class="show"><%= mes_dia_ano_completo(lecture.date_lecture) %></td>
                             <td class="show"><%= hora_minuto(lecture.time_lecture) %></td>
                             <td>
+                                <%= link_to edit_lecture_path(lecture),  class:"btn btn-primary", style: "margin-bottom: 2px;" do %>
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                <% end %>
                                 <%= link_to lecture, method: :delete, data: { confirm: 'Você tem certeza?' }, class:"btn btn-danger", style: "margin-bottom: 2px;" do %>
                                     <i class="fa-regular fa-trash-can"></i>
                                 <% end %>

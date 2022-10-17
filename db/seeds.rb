@@ -1,16 +1,34 @@
 p "iniciando...."
 
-150.times do
-    Follower.create!(
-        name: "Seguidor Fulano de Tal #{rand(1..1000)}",
-        email: "seguidor@gmail.com",
-        birth: rand(365).days.ago,
-        address: "endereço de teste, nº 20",
-        type_date: "Seguidor",
-        parish_id: 1,
-        contact: "(84) 99182-8410"
+    Parish.create!(
+        name: "Paróquia de Sant'Ana e São Joaquim"
     )
-end
 
+    Parish.create!(
+        name: "Paróquia de Nísia Floresta"
+    )
+
+    Parish.create!(
+        name: "Paróquia de Santo Afonso"
+    )
+
+    Circle.create!(
+       color: "Vermelho"
+    )
+    Circle.create!(
+       color: "Verde"
+    )
+    Circle.create!(
+       color: "Amarelo"
+    )
+    Circle.create!(
+       color: "Rosa"
+    )
+    Circle.create!(
+       color: "Laranja"
+    )
+    Circle.create!(
+       color: "Azul"
+    )
 
 p "terminou!"

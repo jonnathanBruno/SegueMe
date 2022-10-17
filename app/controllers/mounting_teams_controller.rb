@@ -10,7 +10,7 @@ class MountingTeamsController < ApplicationController
         @mounting = Mounting.new
         @jaSalvo = Mounting.condicao_montagem("follower_id", "team_id")
         jaSalvo_ids = @jaSalvo.pluck(:follower_id).join(",")
-        @followers = Follower.sem_inseridos(jaSalvo_ids).order(:name)
+        @followers = Follower.order(:name)
     end 
 
     def create

@@ -1,6 +1,6 @@
 class LecturesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_lecture, only: %i[ destroy ]
+  before_action :set_lecture, only: %i[ edit update destroy ]
 
 
   # GET /lectures or /lectures.json
@@ -12,6 +12,22 @@ class LecturesController < ApplicationController
   def new
     @lecture = Lecture.new
   end
+
+  def edit
+  end
+
+  def update
+    respond_to do |format|
+      if @lecture.update(lecture_params)
+        format.html { redirect_to lectures_url(), notice: "Palestra atualizado com sucesso." }
+        format.json { render :show, status: :ok, location: @lecture }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @lecture.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
 
   # POST /lectures or /lectures.json
   def create

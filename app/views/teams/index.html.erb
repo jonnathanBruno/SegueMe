@@ -2,34 +2,29 @@
     <h1 class="h3 mb-2 text-gray-800">Equipes</h1>
     <div class="card shadow mb-4">
         <div class="card-header py-3"></div>
-
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                        <th class="col-8">Nome do Equipe</th>
-                        <th class="col-3">Quantidade de Membros</th>
-                        <th colspan="1"></th>
-                        </tr>
-                    </thead>
-                    <tfoot>
-                    <tbody>
-                        <% @teams.each do |team| %>
-                        <tr>
-                            <td class="show"><%= team.name %></td>
-                            <td class="show"><%= team.qnt %> integrantes </td>
-                            <td>
-                                <%= link_to team, method: :delete, data: { confirm: 'Você tem certeza?' }, class:"btn btn-danger", style: "margin-bottom: 2px;" do %>
-                                    <i class="fa-regular fa-trash-can"></i>
-                                <% end %>
-                            </td>
-                        </tr>
-                        <% end %>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+            <div class="card-body">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <% @teams.each do |team| %>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#<%= team.name.delete(' ') %>" aria-expanded="false" aria-controls="flush-collapseOne">
+                                <span class="show"><%= team.name %></span>
+                            </button>
+                            </h2>
+                            <div id="<%= team.name.delete(' ') %>" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <%= render "table_teams", team: team, funcao: "Jovem Coordenador" if existeFuncaoGeral?(team.id, "Jovem Coordenador")%>
+                                    <%= render "table_teams", team: team, funcao: "Casal Coordenador" if existeFuncaoGeral?(team.id, "Casal Coordenador")%>
+                                    <%= render "table_teams", team: team, funcao: "Casal Apoio" if existeFuncaoGeral?(team.id, "Casal Apoio")%>
+                                    <%= render "table_teams", team: team, funcao: "Jovem Apoio" if existeFuncaoGeral?(team.id, "Jovem Apoio")%>
+                                    <%= render "table_teams", team: team, funcao: "Casal Equipista" if existeFuncaoGeral?(team.id, "Casal Equipista")%>
+                                    <%= render "table_teams", team: team, funcao: "Jovem Equipista" if existeFuncaoGeral?(team.id, "Jovem Equipista")%>
+                                </div>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+        </div>    
     </div>
     
 </div>

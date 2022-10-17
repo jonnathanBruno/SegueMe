@@ -19,6 +19,7 @@ class CreateDatabase < ActiveRecord::Migration[6.1]
     create_table :participants do |t|
       t.timestamps
       t.string :name
+      t.string :surname
       t.string :email
       t.date  :birth
       t.string :address
@@ -41,6 +42,7 @@ class CreateDatabase < ActiveRecord::Migration[6.1]
     create_table :teams do |t|
       t.string :name
       t.integer :qnt
+      t.boolean :manager
       t.timestamps
     end
 
@@ -63,7 +65,7 @@ class CreateDatabase < ActiveRecord::Migration[6.1]
       t.references :circle, null: true, foreign_key: true
       t.references :team, null: true, foreign_key: true
       t.references :lecture, null: true, foreign_key: true
-      t.date :year
+      t.string :year
       t.string :occupation
       t.timestamps
     end
