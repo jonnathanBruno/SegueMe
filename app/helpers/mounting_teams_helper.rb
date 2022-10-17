@@ -12,8 +12,8 @@ module MountingTeamsHelper
         @funcoesPresente.present?
     end
 
-    def existeFuncaoGeral?(team, funcao)
-        @funcoesPresente = Mounting.buscar_existe_funcao_geral(team, funcao)
+    def existeFuncaoGeral?(team, funcao, ano)
+        @funcoesPresente = Mounting.buscar_existe_funcao_geral(team, funcao, ano)
         @funcoesPresente.present?
     end
 
