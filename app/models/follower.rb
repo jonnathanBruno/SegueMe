@@ -6,5 +6,5 @@ class Follower < ApplicationRecord
     validates :address, presence: true
     validates :birth, presence: true
 
-    paginates_per 10
+    paginates_per 50
 end

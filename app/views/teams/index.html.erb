@@ -23,6 +23,7 @@
                                             </h2>
                                             <div id="primeiraTema<%=ano%>" class="accordion-collapse collapse" aria-labelledby="flush-heading<%=ano%>" data-bs-parent="#accordion<%=ano%>">
                                                 <div class="accordion-body">
+                                                    <%= render "table_teams", team: team, ano: ano, ano: ano, funcao: "Jovem Coordenador" if existeFuncaoGeral?(team.id, "Dirigente Espiritual", ano)%>
                                                     <%= render "table_teams", team: team, ano: ano, ano: ano, funcao: "Jovem Coordenador" if existeFuncaoGeral?(team.id, "Jovem Coordenador", ano)%>
                                                     <%= render "table_teams", team: team, ano: ano, funcao: "Casal Coordenador" if existeFuncaoGeral?(team.id, "Casal Coordenador", ano)%>
                                                     <%= render "table_teams", team: team, ano: ano, funcao: "Casal Apoio" if existeFuncaoGeral?(team.id, "Casal Apoio", ano)%>
