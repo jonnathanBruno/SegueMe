@@ -3,7 +3,7 @@ class TeamsController < ApplicationController
     before_action :set_team, only: %i[ destroy ]
 
     def index
-        @teams = Team.all
+        @teams = Team.all.order(:name)
     end
 
     def new
