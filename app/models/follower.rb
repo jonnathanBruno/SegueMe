@@ -2,7 +2,7 @@ class Follower < ApplicationRecord
     has_one :mounting, dependent: :destroy
     belongs_to :parish, optional: true
   
-    validates :name, presence: true
+    validates :name, presence: true, uniqueness: true
     validates :address, presence: true
     validates :birth, presence: true
 
