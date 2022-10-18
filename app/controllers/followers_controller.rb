@@ -11,7 +11,7 @@ class FollowersController < ApplicationController
 
   # GET /followers/1 or /followers/1.json
   def show
-    @equipesTrabalhadas = Mounting.where(follower_id: params[:id]).where.not(team_id: nil)
+    @equipesTrabalhadas = Mounting.where(follower_id: params[:id]).where.not(team_id: nil).order("year")
   end
 
   # GET /followers/new
