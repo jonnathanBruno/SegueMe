@@ -8,7 +8,7 @@ module MountingTeamsHelper
 
     def existeFuncao?(team, funcao)
         @time = Time.new
-        @funcoesPresente = Mounting.buscar_existe_funcao(team, funcao, (@time.year).to_s)
+        @funcoesPresente = Mounting.buscar_existe_funcao(team, funcao, "2018")
         @funcoesPresente.present?
     end
 
