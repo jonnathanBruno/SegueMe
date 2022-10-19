@@ -5,8 +5,8 @@ class MountingsController < ApplicationController
         @mountings = Mounting.all
         @participants = Participant.all.order(:name)
         @palestras = Lecture.all
-        @teams = Team.nao_dirigentes
-        @teamsManager = Team.dirigentes
+        @teams = Team.nao_dirigentes.order("name")
+        @teamsManager = Team.dirigentes.order("name")
         @circles = Circle.all
         respond_to do |format|
             format.html {render "mountings/index", :layout => "pdf.html.erb"}
@@ -19,8 +19,8 @@ class MountingsController < ApplicationController
     end
 
     def followers
-        @teams = Team.nao_dirigentes
-        @teamsManager = Team.dirigentes
+        @teams = Team.nao_dirigentes.order(:name)
+        @teamsManager = Team.dirigentes.order(:name)
         respond_to do |format|
             format.html {render "mountings/followers", :layout => "pdf.html.erb"}
             format.json
