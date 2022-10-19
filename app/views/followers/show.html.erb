@@ -51,15 +51,15 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                        <th class="col-6">Equipe</th>
-                        <th class="col-4">Função</th>
-                        <th class="col-2">Ano</th>
+                        <th class="col-6">EQUIPE</th>
+                        <th class="col-4">FUNÇÃO</th>
+                        <th class="col-2">ANO</th>
                         </tr>
                     </thead>
                     <tbody>
                         <% @equipesTrabalhadas.each do |t| %>
                           <tr>
-                              <td class="show"><%= t.team.name %> </td>
+                              <td class="show fw-bold"><%= t.team.name %> </td>
                               <td class="show"><%= t.occupation %> </td>
                               <td class="show"><%= t.year %> </td>
                           </tr>

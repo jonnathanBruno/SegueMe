@@ -8,7 +8,7 @@
         <% existeFuncao?(team.id, funcao) %>
         <% @funcoesPresente.each do |mc| %>
             <tr>
-                <td class="show-quadrante"><%= maiuscula(mc.follower.name) %></td>
+                <td class="show-quadrante fw-bold"><%= maiuscula(mc.follower.name) %></td>
                 <td class="show-quadrante"><%= "--" if !mc.follower.email.present? %><%= maiuscula(mc.follower.email) %></td>
                 <td class="show-quadrante"><%= maiuscula(mes_dia_ano(mc.follower.birth)) %></td>
             </tr>

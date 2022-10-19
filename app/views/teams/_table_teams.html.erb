@@ -19,8 +19,8 @@
                 <td class="show"><%= "--" if !mt.follower.contact.present? %><%= mt.follower.contact %></td>
                 <td class="show"><%= mt.year %></td>
                 <td>
-                    <%= link_to mounting_team_path(mt), method: :delete, data: { confirm: 'Você tem certeza?' }, class:"btn btn-danger", style: "margin-bottom: 2px;" do %>
-                        <i class="fa-regular fa-trash-can"></i>
+                     <%= link_to mt.follower,  class:"btn btn-warning", style: "margin-bottom: 2px;" do %>
+                        <i class="fa-solid fa-magnifying-glass"></i>
                     <% end %>
                 </td>
             </tr>
