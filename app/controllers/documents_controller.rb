@@ -7,6 +7,14 @@ class DocumentsController < ApplicationController
         )
     end
 
+    def download_pdf_2017
+      send_file(
+        "#{Rails.root}/public/quadrante2017.pdf",
+        filename: "QUADRANTE_SEGUE_ME_2017.pdf",
+        type: "application/pdf"
+      )
+  end
+
     def download_pdf_2018
       send_file(
         "#{Rails.root}/public/quadrante2018.pdf",

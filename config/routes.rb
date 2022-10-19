@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "/mountings/speakers", to: "mountings#speakers"
   get "/mountings/quadrante", to: "mountings#quadrante"
   get "documents/download_pdf_2015"
+  get "documents/download_pdf_2017"
   get "documents/download_pdf_2018"
   get "documents/download_pdf_2019"
   get "documents", to: "documents#index"
