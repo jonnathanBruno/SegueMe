@@ -8,12 +8,12 @@
         <% existeFuncao?(team.id, funcao) %>
         <% @funcoesPresente.each do |mc| %>
             <tr>
-                <td class="show-quadrante" colspan="2"><%= maiuscula(mc.follower.name) %></td>
+                <td class="show-quadrante"><%= maiuscula(mc.follower.name) %></td>
+                <td class="show-quadrante"><%= "--" if !mc.follower.email.present? %><%= maiuscula(mc.follower.email) %></td>
                 <td class="show-quadrante"><%= maiuscula(mes_dia_ano(mc.follower.birth)) %></td>
             </tr>
                 <tr>
-                <td class="show-quadrante"><%= mc.follower.address%></td>
-                <td class="show-quadrante"><%= "--" if !mc.follower.email.present? %><%= maiuscula(mc.follower.email) %></td>
+                <td class="show-quadrante" colspan="2"><%= mc.follower.address%></td>
                 <td class="show-quadrante"><%= "--" if !mc.follower.contact.present? %><%= mc.follower.contact %></td>
             </tr>
             <tr style="height: 20px"></tr>
