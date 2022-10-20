@@ -3,7 +3,7 @@ class Follower < ApplicationRecord
     belongs_to :parish, optional: true
   
     validates :name, presence: true, uniqueness: true, 
-              :length =>{ :maximum => 45,
+              :length =>{ :maximum => 50,
                           :too_long => ": %{count} caracteres é o máximo permitido" }
 
     validates :address, presence: true
