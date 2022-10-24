@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "documents/download_pdf_2017"
   get "documents/download_pdf_2018"
   get "documents/download_pdf_2019"
+  get "documents/download_pdf_2022"
   get "documents", to: "documents#index"
 
   resources :mountings, only: [:index, :followers, :speakers, :quadrante]

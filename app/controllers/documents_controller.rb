@@ -39,6 +39,14 @@ class DocumentsController < ApplicationController
       )
     end
 
+    def download_pdf_2022
+      send_file(
+        "#{Rails.root}/public/quadrante2022.pdf",
+        filename: "QUADRANTE_SEGUE_ME_2022.pdf",
+        type: "application/pdf"
+      )
+    end
+
     def index
     end
 end
