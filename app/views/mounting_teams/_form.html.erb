@@ -13,7 +13,7 @@
                     <%= f.input :occupation, as: :select, collection: ["Jovem Equipista", "Jovem Apoio", "Jovem Coordenador", "Casal Equipista", "Casal Apoio", "Casal Coordenador", "Dirigente Espiritual"], label: "Função na Equipe", selected: "Jovem Equipista" %>
                 </div>
                 <div class="col-md-4">
-                    <%= f.input :year, as: :select, label: "Ano do Encontro", collection: ["2022","2023","2024","2025","2026","2027","2028"], selected: "2022" %>
+                    <%= f.input :year, as: :select, label: "Ano do Encontro", collection: ["2022","2023","2024","2025","2026","2027","2028"], selected: ((Time.new).year).to_s %>
                 </div>
             </div>
             <div class="row">
