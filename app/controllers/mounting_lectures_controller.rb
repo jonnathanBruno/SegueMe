@@ -8,7 +8,7 @@ class MountingLecturesController < ApplicationController
 
     def new
         @mounting = Mounting.new
-        @jaSalvo = Mounting.condicao_montagem("speaker_id")
+        @jaSalvo = Mounting.condicao_montagem_palestra("speaker_id")
         jaSalvo_ids = @jaSalvo.pluck(:speaker_id).join(",")
         @speakers = Speaker.sem_inseridos(jaSalvo_ids)
     end 
