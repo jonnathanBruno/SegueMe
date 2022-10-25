@@ -19,7 +19,14 @@
         <%= render "layouts/table_circles", circle: circle, funcao: "Seguimista" if existeCirculo?(circle.id)%>
 <% end %>
 
-<h1 class="quebra-de-pagina"> Relatório de Perguntas de Círculos </h1>
+<div class="container quebra-de-pagina">
+    <div class="row">
+        <p class="text-center" style="margin-bottom: -15px" "><%= image_tag "logo.png", style:"width: 200px" %></p>
+        <h3 class="text-center" id="tituloEncontroPalestra"></h3>
+        <h1 class="quebra-de-pagina" style="margin-top: -8px;">RELATÓRIO DE PERGUNTAS DE CÍRCULOS</h1>
+    </div>
+</div>
+
 <%= render "relatorio_tema_um", circles: @circles %>
 <%= render "relatorio_tema_dois", circles: @circles %>
 <%= render "relatorio_tema_tres", circles: @circles %>
@@ -54,8 +61,13 @@
 <% end %>
 
 <!-- Renderizar palestrantes -->
-<h1 class="quebra-de-pagina" id="tituloEncontroPalestra"></h1>
-<h1 class="text-center">PALESTRANTES</h1>
+<div class="container quebra-de-pagina mb-4">
+    <div class="row">
+        <p class="text-center" style="margin-bottom: -15px" "><%= image_tag "logo.png", style:"width: 200px" %></p>
+        <h2 class="text-center" id="tituloEncontroPalestra"></h2>
+        <h1 class="text-center">PALESTRANTES</h1>   
+    </div>
+</div>
 <%= render "layouts/table_speakers", palestras: @palestras %>
 
 <p class="quebra-de-pagina">
