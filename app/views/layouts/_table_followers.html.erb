@@ -10,7 +10,7 @@
             <tr>
                 <td class="show-quadrante fw-bold"><%= maiuscula(mc.follower.name) %></td>
                 <td class="show-quadrante"><%= "--" if !mc.follower.email.present? %><%= maiuscula(mc.follower.email) %></td>
-                <td class="show-quadrante"><%= maiuscula(mes_dia_ano(mc.follower.birth)) %></td>
+                <td class="show-quadrante"><%= maiuscula(mes_dia(mc.follower.birth)) %></td>
             </tr>
                 <tr>
                 <td class="show-quadrante" colspan="2"><%= mc.follower.address%></td>

@@ -1,22 +1,26 @@
 module ApplicationHelper
     def mes_dia_ano(datetime)
-        datetime.strftime('%e %b %y')
+        l(datetime, format:'%e %b %y')
     end
 
     def mes_dia_ano_completo(datetime)
-        datetime.strftime('%e %B %Y')
+        l(datetime, format:'%e %B %Y')
+    end
+
+    def mes_dia(datetime)
+        l(datetime, format:'%e %B')
     end
 
     def mes_dia_curto(datetime)
-        datetime.strftime('%e %b')
+        l(datetime, format:'%e %b')
     end
 
     def so_ano(datetime)
-        datetime.strftime('%Y')
+        l(datetime, format:'%Y')
     end
 
     def hora_minuto(datetime)
-        datetime.strftime('%HH%M')
+        l(datetime, format:'%HH%M')
     end
 
     def render_if(template, condition)

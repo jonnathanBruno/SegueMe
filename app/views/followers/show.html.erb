@@ -15,7 +15,7 @@
             </div>
 
             <div class="control-group">
-              <label class="control-label show"><strong>Aniversário: </strong> <%= mes_dia_ano(@follower.birth) %></label>
+              <label class="control-label show"><strong>Aniversário: </strong> <%= mes_dia(@follower.birth) %></label>
             </div>
 
             <div class="control-group">
@@ -23,11 +23,11 @@
             </div>
 
             <div class="control-group">
-                <label class="control-label show"><strong>Telefone: </strong><%= @follower.contact %></label>
+                <label class="control-label show"><strong>Telefone: </strong><%= "--" if !@follower.contact.present? %><%= @follower.contact %></label>
             </div>
 
             <div class="control-group">
-                <label class="control-label show"><strong>Email: </strong><%= @follower.email %></label>
+                <label class="control-label show"><strong>Email: </strong><%= "--" if !@follower.email.present? %><%= @follower.email %></label>
             </div>
 
             <div class="control-group">
