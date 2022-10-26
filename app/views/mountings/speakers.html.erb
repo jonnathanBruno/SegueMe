@@ -1,3 +1,9 @@
 <!-- Renderizar palestrantes -->
-<h1 class="quebra-de-pagina">Palestrantes</h1>
+<div class="container quebra-de-pagina mb-4">
+    <div class="row">
+        <p class="text-center" style="margin-bottom: -15px" "><%= image_tag "logo.png", style:"width: 200px" %></p>
+        <h2 class="text-center">ENCONTRO DE JOVENS COM CRISTO SEGUE-ME</h2>
+        <h1 class="text-center">PALESTRANTES</h1>   
+    </div>
+</div>
 <%= render "layouts/table_speakers", palestras: @palestras %>

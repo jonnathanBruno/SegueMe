@@ -158,8 +158,7 @@ function cadastrarRespostas(cor, tema, pergunta) {
          "cor": cor
         });
     localStorage.setItem("tema"+tema+"Pergunta"+pergunta,  JSON.stringify(resposta));   
-    document.getElementById('alertaQuadrante').className = "alerta-quadrante-ativado alert alert-success";
-    setTimeout(zerando, 2000);    
+    alert("Adicionado com Sucesso!"); 
 }
 
 function gerarQuadrante() {  
