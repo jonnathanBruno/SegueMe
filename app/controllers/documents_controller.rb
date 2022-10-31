@@ -47,6 +47,22 @@ class DocumentsController < ApplicationController
       )
     end
 
+    def download_cantos_hora_santa
+      send_file(
+        "#{Rails.root}/public/livroHoraSanta.docx",
+        filename: "CANTOS_HORA_SANTA.docx",
+        type: "application/pdf"
+      )
+    end
+
+    def download_livro_canto
+      send_file(
+        "#{Rails.root}/public/livroCanto.docx",
+        filename: "LIVRO_DE_CANTO.docx",
+        type: "application/pdf"
+      )
+    end
+
     def index
     end
 end
